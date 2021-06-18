@@ -1,0 +1,18 @@
+<ul>
+  <li className="{% if page.overview %}current{% endif %}">
+    <a href="/">Home</a>
+  </li>
+  <li className="{% if page.url contains '/docs/' %}current{% endif %}">
+    <a href="/docs/home/">Doc<span className="show-on-mobiles">s</span><span
+        className="hide-on-mobiles">umentation</span></a>
+  </li>
+  <li className="{% if page.author %}current{% endif %}">
+    <a href="/news/">News</a>
+  </li>
+  <li>
+    <a href="{{ site.help_url }}">Help</a>
+  </li>
+  <li>
+    <a href="{{ site.repository }}"><span className="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
