@@ -4,70 +4,63 @@ import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './SideNav.css';
 import { SideNavData } from './SideNavData';
+import { NavLink } from 'react-router-dom';
+
 function SideNav() {
   return (
-    <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
-      <div class="scrollbar-inner">
+    <nav className="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+      <div className="scrollbar-inner">
         {/* <!-- Brand --> */}
-        <div class="sidenav-header  align-items-center">
-          <a class="navbar-brand" href="javascript:void(0)">
-            <img src="../../logo.gif" class="navbar-brand-img" alt="..." />
-          </a>
+        <div className="sidenav-header mt-2 align-items-center">
+            <img src="../../logo.gif" height="95%" width="80%" alt="..." />
         </div>
-        <div class="navbar-inner">
+        <div className="navbar-inner">
           {/* <!-- Collapse --> */}
-          <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+          <div className="collapse navbar-collapse" id="sidenav-collapse-main">
             {/* <!-- Nav items --> */}
             <ul className="navbar-nav">
               {SideNavData.map((item, index) => {
                 return (
                   <li className="nav-item" key={index}>
-                    {console.log(item.title)}
-                    <a className="nav-link active" href="dashboard.html">
-                      {item.icon} &emsp;
-                    <span className="nav-link-text">{item.title}</span>
-                    </a>
+                    <NavLink to={item.path} activeClassName="nav-link active" className="nav-link collapsed p-3" href="#page_top" aria-expanded="true">
+                      {item.icon}
+                      <span className="nav-link-text">{item.title}</span>
+                    </NavLink>
                   </li>
                 )
               })}
 
             </ul>
             {/* <!-- Divider --> */}
-            <hr class="my-3" />
+            <hr className="my-3" />
             {/* <!-- Heading --> */}
-            <h6 class="navbar-heading p-0 text-muted">
-              <span class="docs-normal">Documentation</span>
+            <h6 className="navbar-heading p-0 text-muted">
+              <span className="docs-normal">Documentation</span>
             </h6>
             {/* <!-- Navigation --> */}
-            <ul class="navbar-nav mb-md-3">
-              <li class="nav-item">
-                <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
-                  <i class="ni ni-spaceship"></i>
-                  <span class="nav-link-text">Getting started</span>
+            <ul className="navbar-nav mb-md-3">
+              <li className="nav-item">
+                <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
+                  <i className="ni ni-spaceship"></i>
+                  <span className="nav-link-text">Getting started</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html" target="_blank">
-                  <i class="ni ni-palette"></i>
-                  <span class="nav-link-text">Foundation</span>
+              <li className="nav-item">
+                <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
+                  <i className="ni ni-palette"></i>
+                  <span className="nav-link-text">Foundation</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html" target="_blank">
-                  <i class="ni ni-ui-04"></i>
-                  <span class="nav-link-text">Components</span>
+              <li className="nav-item">
+                <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
+                  <i className="ni ni-ui-04"></i>
+                  <span className="nav-link-text">Components</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
-                  <i class="ni ni-chart-pie-35"></i>
-                  <span class="nav-link-text">Plugins</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active active-pro" href="upgrade.html">
-                  <i class="ni ni-send text-dark"></i>
-                  <span class="nav-link-text">Upgrade to PRO</span>
+              <li className="nav-item">
+                <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html">
+                  <i className="ni ni-chart-pie-35"></i>
+                  <span className="nav-link-text">Plugins</span>
                 </a>
               </li>
             </ul>

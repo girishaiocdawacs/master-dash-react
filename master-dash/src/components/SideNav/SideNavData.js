@@ -2,72 +2,41 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
-import * as HiIcons from "react-icons/hi";
-import * as BiIcons from "react-icons/bi";
-import * as BsIcons from "react-icons/bs";
+// import * as HiIcons from "react-icons/hi";
+// import * as BiIcons from "react-icons/bi";
+// import * as BsIcons from "react-icons/bs";
 
 export const SideNavData = [
     {
         title: 'Home',
         path: '/home',
-        icon: <i class="ni ni-circle-08 text-pink"></i>,
+        icon: <i className="ni ni-settings text-pink"></i>,
     },
     {
-        title: 'Mapping Request',
-        path: '/mappingrequest',
-        icon: <i class="ni ni-bullet-list-67 text-green"></i>,
+        title: 'Stock and Sales',
+        path: '/stockandsales',
+        icon: <i className="ni ni-chart-bar-32 text-green"></i>,
     },
     {
-        title: 'Place Order',
-        path: '/placeorder',
-        icon: <i class="ni ni-send text-dark"></i>,
+        title: 'File Details',
+        path: '/filedetails',
+        icon: <i className="ni ni-palette text-blue"></i>,
     },
     {
-        title: 'Draft',
-        path: '/draft',
-        icon: <i class="ni ni-palette text-blue"></i>,
+        title: 'Batch Details',
+        path: '/batchdetails',
+        icon: <i className="ni ni-circle-08 text-pink"></i>,
     },
     {
-        title: 'Home',
-        path: '/home',
-        icon: <i class="ni ni-circle-08 text-pink"></i>,
+        title: 'Invoice Details',
+        path: '/invoice',
+        icon: <i className="ni ni-briefcase-24 text-dark"></i>,
     },
     {
-        title: 'Mapping Request',
-        path: '/mappingrequest',
-        icon: <i class="ni ni-bullet-list-67 text-green"></i>,
+        title: 'File Details',
+        path: '/filedetails',
+        icon: <i className="ni ni-badge text-blue"></i>,
     },
-    {
-        title: 'Place Order',
-        path: '/placeorder',
-        icon: <i class="ni ni-send text-dark"></i>,
-    },
-    {
-        title: 'Draft',
-        path: '/draft',
-        icon: <i class="ni ni-palette text-blue"></i>,
-    },
-    {
-        title: 'Home',
-        path: '/home',
-        icon: <i class="ni ni-circle-08 text-pink"></i>,
-    },
-    {
-        title: 'Mapping Request',
-        path: '/mappingrequest',
-        icon: <i class="ni ni-bullet-list-67 text-green"></i>,
-    },
-    {
-        title: 'Place Order',
-        path: '/placeorder',
-        icon: <i class="ni ni-send text-dark"></i>,
-    },
-    {
-        title: 'Draft',
-        path: '/draft',
-        icon: <i class="ni ni-palette text-blue"></i>,
-    },
-
 ]
 
 export const SideNavLowerData = [

@@ -3,27 +3,46 @@ import '../../assets/css/argon.css?v=1.2.0';
 import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './Header.css';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
-function Header() {
+function Header(props) {
+  const disp = props.disp;
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      In Development
+    </Tooltip>
+  );
+
   return (
-    <div class="header bg-primary pb-6">
-      <div class="header bg-primary pb-6">
-        <div class="container-fluid">
-          <div class="header-body">
-            <div class="row align-items-center py-4">
-              <div class="col-lg-6 col-7">
-                <h6 class="h2 text-white d-inline-block mb-0">Default</h6>
-                <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                  <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Default</li>
+    <div className="header bg-primary pb-6">
+      <div className="header bg-primary pb-6">
+        <div className="container-fluid">
+          <div className="header-body">
+            <div className="row align-items-center py-4">
+              <div className="col-lg-6 col-7">
+                <h6 className="h2 text-white d-inline-block mb-0">{props.title}</h6>
+                <nav aria-label="breadcrumb" className="d-none d-md-inline-block ml-md-4">
+                  <ol className="breadcrumb breadcrumb-links breadcrumb-dark">
+                    <li className="breadcrumb-item"><a href="/home"><i className="fas fa-home"></i></a></li>
+                    <li className="breadcrumb-item active" aria-current="page">{props.btitle}</li>
                   </ol>
                 </nav>
               </div>
-              <div class="col-lg-6 col-5 text-right">
-                <a href="#" class="btn btn-sm btn-neutral">New</a>
-                <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+              <div className="col-lg-6 col-5 text-right" style={{ display: disp }}>
+                <OverlayTrigger
+                  placement="bottom"
+                  delay={{ show: 250, hide: 400 }}
+                  overlay={renderTooltip}
+                >
+                  <a href="www.aiocdawacs.com" className="btn btn-sm btn-neutral disabled" style={{display:"none"}}>Add Screen</a>
+                </OverlayTrigger>
+                <OverlayTrigger
+                  placement="bottom"
+                  delay={{ show: 250, hide: 400 }}
+                  overlay={renderTooltip}
+                >
+                  <button className="btn btn-sm btn-neutral disabled">Add Screen</button>
+                </OverlayTrigger>
               </div>
             </div>
           </div>

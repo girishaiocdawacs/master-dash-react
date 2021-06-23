@@ -4,7 +4,6 @@ import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import Dashboard from '../Dashboard/Dashboard';
 import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
 import Login from '../Login/Login';
 import './Welcome.css';
 
@@ -12,7 +11,6 @@ function Welcome() {
   if (sessionStorage.getItem('userLogin')) {
     return (
       <div>
-        {/* <Header /> */}
         <Dashboard />
         <Footer />
       </div>
@@ -21,7 +19,6 @@ function Welcome() {
   else {
     return (
       <div>
-        {/* <Header /> */}
         <Login />
         <Footer />
       </div>
