@@ -1,0 +1,16 @@
+.list{
+    list-style: none;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .disp-lg{
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .disp-sm{
+        display: none !important;
+    }
+}

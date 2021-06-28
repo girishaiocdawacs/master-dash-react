@@ -18,6 +18,11 @@ export const SideNavData = [
         icon: <i className="ni ni-chart-bar-32 text-green"></i>,
     },
     {
+        title: 'Item Mapping',
+        path: '/itemmapping',
+        icon: <i className="ni ni-check-bold text-red"></i>,
+    },
+    {
         title: 'File Details',
         path: '/filedetails',
         icon: <i className="ni ni-palette text-blue"></i>,
@@ -25,7 +30,7 @@ export const SideNavData = [
     {
         title: 'Batch Details',
         path: '/batchdetails',
-        icon: <i className="ni ni-circle-08 text-pink"></i>,
+        icon: <i className="ni ni-circle-08 text-yellow"></i>,
     },
     {
         title: 'Invoice Details',

@@ -19,7 +19,7 @@ function StockAndSales(props) {
   return (
     <div>
       <Header title="Stock and Sales" btitle="Stock and Sales" disp="none" />
-      <div className="container-fluid mt--6">
+      <div className="container-fluid mt--8">
         <div className="row">
           <div className="col-xl col-md">
             <div className="card">

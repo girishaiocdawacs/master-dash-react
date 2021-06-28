@@ -5,14 +5,34 @@ import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './SideNav.css';
 import { SideNavData } from './SideNavData';
 import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function SideNav() {
+
+  const [sideNavData, setSideNavData] = useState([])
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+
+  function fetchData() {
+    fetch('http://127.0.0.1:5000/SideNavData', {
+      method: 'GET'
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        setSideNavData(json)
+        console.log(String.fromCodePoint(0x1F525),String.fromCodePoint(0x1F621),String.fromCodePoint(0x1F631),String.fromCodePoint(0x1F41E));
+      })
+  }
+
   return (
     <nav className="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
       <div className="scrollbar-inner">
         {/* <!-- Brand --> */}
         <div className="sidenav-header mt-2 align-items-center">
-            <img src="../../logo.gif" height="95%" width="80%" alt="..." />
+          <img src="../../logo.gif" height="95%" width="80%" alt="..." />
         </div>
         <div className="navbar-inner">
           {/* <!-- Collapse --> */}

@@ -4,7 +4,7 @@ import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './Home.css';
 
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Cards() {
 
@@ -47,7 +47,7 @@ function Cards() {
                             </div>
                         </div>
                         <p className="mt-3 mb-0 text-sm">
-                            <span className="text-success mr-2"><i className="fa fa-arrow-up"></i> 3.48%</span>
+                            <span className="text-success mr-2"><i className="fa fa-arrow-up"></i> 34.48%</span>
                             <span className="text-nowrap">Since last month</span>
                         </p>
                     </div>
@@ -69,7 +69,7 @@ function Cards() {
                             </div>
                         </div>
                         <p className="mt-3 mb-0 text-sm">
-                            <span className="text-success mr-2"><i className="fa fa-arrow-up"></i> 3.48%</span>
+                            <span className="text-danger mr-2"><i className="fa fa-arrow-down"></i>3.02%</span>
                             <span className="text-nowrap">Since last month</span>
                         </p>
                     </div>
@@ -91,7 +91,7 @@ function Cards() {
                             </div>
                         </div>
                         <p className="mt-3 mb-0 text-sm">
-                            <span className="text-success mr-2"><i className="fa fa-arrow-up"></i> 3.48%</span>
+                            <span className="text-success mr-2"><i className="fa fa-arrow-up"></i> 13.93%</span>
                             <span className="text-nowrap">Since last month</span>
                         </p>
                     </div>
@@ -113,7 +113,7 @@ function Cards() {
                             </div>
                         </div>
                         <p className="mt-3 mb-0 text-sm">
-                            <span className="text-success mr-2"><i className="fa fa-arrow-up"></i> 3.48%</span>
+                            <span className="text-success mr-2"><i className="fa fa-arrow-up"></i> 48.56%</span>
                             <span className="text-nowrap">Since last month</span>
                         </p>
                     </div>

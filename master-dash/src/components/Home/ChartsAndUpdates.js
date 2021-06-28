@@ -1,11 +1,82 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/css/argon.css?v=1.2.0';
 import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './Home.css';
 import { UpdateData } from './UpdateData';
+import { Bar } from 'react-chartjs-2';
+
 function ChartsAndUpdates() {
+
+    const [month, setMonth] = useState(["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"]);
+    const [data, setData] = useState([79, 61, 79, 9, 67, 97, 99, 6, 9, 67, 9, 6])
+    const [chartToggle, setChartToggle] = useState(true)
+    const [chartType, setChartType] = useState('Month')
+    const monthChart = <Bar
+        data={{
+            labels: month,
+            datasets: [{
+                label: 'No of Orders',
+                data: data,
+                backgroundColor: '#87c1c1',
+                borderColor: '#65a765',
+                borderWidth: 1
+            }]
+        }}
+        width={100}
+        height={200}
+        options={{
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        display: true
+                    },
+                    ticks: {
+                        max: 100,
+                        min: 0,
+                        stepSize: 20,
+                        fontColor: '#a6a6a6'
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                        color: '#a6a6a6'
+                    },
+                    ticks: {
+                        fontColor: '#a6a6a6'
+                    }
+                }]
+            },
+            legend: {
+                labels: {
+                    fontColor: '#a6a6a6'
+                }
+            }
+        }}
+    />
+
+    const weekChart = <h1 className="text-white">Week Chart</h1>
+
+    const [chart, setChart] = useState(monthChart)
+
+
+    useEffect(() => {
+        console.log(chartToggle)
+        if (chartToggle == true) {
+            setChartType('Month')
+            setChart(monthChart)
+        }
+        if (chartToggle == false) {
+            setChartType('Week')
+            setChart(weekChart)
+        }
+    }, [chartToggle])
+
     return (
         <div className="row">
             <div className="col-xl-8">
@@ -13,19 +84,19 @@ function ChartsAndUpdates() {
                     <div className="card-header bg-transparent">
                         <div className="row align-items-center">
                             <div className="col">
-                                <h6 className="text-light text-uppercase ls-1 mb-1">Overview</h6>
+                                <h6 className="text-light text-uppercase ls-1 mb-1">{chartType}</h6>
                                 <h5 className="h3 text-white mb-0">Sales value</h5>
                             </div>
                             <div className="col">
                                 <ul className="nav nav-pills justify-content-end">
-                                    <li className="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
-                                        <a href="www.aiocdawacs.com" className="nav-link py-2 px-3 active" data-toggle="tab">
+                                    <li className="nav-item mr-2 mr-md-0" onClick={() => { setChartToggle(!chartToggle) }} >
+                                        <a href="www.aiocdawacs.com" className="nav-link py-2 px-3 active" id="Month" data-toggle="tab">
                                             <span className="d-none d-md-block">Month</span>
                                             <span className="d-md-none">M</span>
                                         </a>
                                     </li>
-                                    <li className="nav-item" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
-                                        <a href="www.aiocdawacs.com" className="nav-link py-2 px-3" data-toggle="tab">
+                                    <li className="nav-item" onClick={() => { setChartToggle(!chartToggle) }}>
+                                        <a href="www.aiocdawacs.com" className="nav-link py-2 px-3" id="Week" data-toggle="tab">
                                             <span className="d-none d-md-block">Week</span>
                                             <span className="d-md-none">W</span>
                                         </a>
@@ -37,7 +108,7 @@ function ChartsAndUpdates() {
                     <div className="card-body">
                         {/* <!-- Chart --> */}
                         <div className="chart">
-                            {/* <!-- Chart wrapper --> */}
+                            {chart}
                         </div>
                     </div>
                 </div>

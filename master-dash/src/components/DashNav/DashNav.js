@@ -38,6 +38,7 @@ function DashNav() {
                 <div className="input-group-prepend">
                   <span className="input-group-text"><i className="fas fa-search"></i></span>
                 </div>
+                {/* <input className="form-control" placeholder={String.fromCodePoint(0x1F525) + "" + String.fromCodePoint(0x1F621) + "" + String.fromCodePoint(0x1F631) + "" + String.fromCodePoint(0x1F41E)} type="text" /> */}
                 <input className="form-control" placeholder="Search" type="text" />
               </div>
             </div>
@@ -49,13 +50,13 @@ function DashNav() {
           <ul className="navbar-nav align-items-center  ml-md-auto ">
             <li className="nav-item d-xl-none">
               {/* <!-- Sidenav toggler --> */}
-              <div className="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+              {/* <div className="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
                 <div className="sidenav-toggler-inner">
                   <i className="sidenav-toggler-line"></i>
                   <i className="sidenav-toggler-line"></i>
                   <i className="sidenav-toggler-line"></i>
                 </div>
-              </div>
+              </div> */}
             </li>
             <li className="nav-item d-sm-none">
               <a className="nav-link" href="www.aiocdawacs.com" data-action="search-show" data-target="#navbar-search-main">
@@ -144,6 +145,15 @@ function DashNav() {
             </li>
           </ul>
           <ul className="navbar-nav align-items-center  ml-auto ml-md-0 ">
+            <li className="nav-item d-xl-none">
+              <div className="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                <div className="sidenav-toggler-inner">
+                  <i className="sidenav-toggler-line"></i>
+                  <i className="sidenav-toggler-line"></i>
+                  <i className="sidenav-toggler-line"></i>
+                </div>
+              </div>
+            </li>
             <li className="nav-item dropdown" onClick={() => { handleShow() }}>
               <span className="nav-link pr-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div className="media align-items-center">

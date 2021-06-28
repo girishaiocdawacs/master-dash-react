@@ -42,7 +42,7 @@ function AddScreen() {
   return (
     <>
       <Header title="Add Screen" btitle="Add Screen" disp="none" />
-      <div className="container-fluid mt--6">
+      <div className="container-fluid mt--8">
         <div className="row">
           <div className="col-xl col-md">
             <div className="card">
@@ -75,7 +75,7 @@ function AddScreen() {
                     </div>
                   </div>
                 </form>
-                <div style={{display:"flex", flexDirection:"row-reverse"}}>
+                <div style={{ display: "flex", flexDirection: "row-reverse" }}>
                   <button type="button" style={{ display: "flex", justifyContent: "right" }} className="btn btn-success">Request Screen</button>
                 </div>
               </div>

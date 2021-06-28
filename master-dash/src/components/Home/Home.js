@@ -17,7 +17,7 @@ function Home(props) {
   //   })
   //     .then((response) => response.json())
   //     .then((json) => {
-  //       // setNum(json)
+  //        setNum(json)
   //       console.log(json);
   //     });
   // }
@@ -25,7 +25,7 @@ function Home(props) {
   return (
     <div>
       <Header title="Home" btitle="Home" disp="show" />
-      <div className="container-fluid mt--6">
+      <div className="container-fluid mt--8">
         <Cards />
         <ChartsAndUpdates />
         <div className="row">

@@ -11,6 +11,7 @@ import StockAndSales from '../StockAndSales/StockAndSales';
 import NotFound from '../NotFound/NotFound';
 import ZZ from '../ZZ/ZZ'
 import AddScreen from '../AddScreen/AddScreen';
+import ItemMapping from '../ItemMapping/ItemMapping';
 
 
 function Dashboard() {
@@ -24,6 +25,7 @@ function Dashboard() {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route path="/stockandsales" component={StockAndSales} />
+            <Route path="/itemmapping" component={ItemMapping} />
             <Route path="/invoice" component={ZZ} />
             <Route path="/filedetails" component={Home} />
             <Route path="/addscreen" component={AddScreen} />
