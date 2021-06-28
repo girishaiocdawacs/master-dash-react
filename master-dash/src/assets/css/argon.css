@@ -6595,6 +6595,10 @@ a.close.disabled {
     vertical-align: text-top !important;
 }
 
+.bg-light-green{
+    background-color: #BDF5BD;
+}
+
 .bg-primary {
     background-color: #5e72e4 !important;
 }

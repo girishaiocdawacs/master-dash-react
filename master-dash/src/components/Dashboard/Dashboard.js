@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import DashNav from '../DashNav/DashNav';
 import StockAndSales from '../StockAndSales/StockAndSales';
 import NotFound from '../NotFound/NotFound';
+import ZZ from '../ZZ/ZZ'
+import AddScreen from '../AddScreen/AddScreen';
 
 
 function Dashboard() {
@@ -22,8 +24,9 @@ function Dashboard() {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route path="/stockandsales" component={StockAndSales} />
-            <Route path="/invoice" component={Home} />
+            <Route path="/invoice" component={ZZ} />
             <Route path="/filedetails" component={Home} />
+            <Route path="/addscreen" component={AddScreen} />
             <Route path="/*" component={NotFound} />
 
           </Switch>

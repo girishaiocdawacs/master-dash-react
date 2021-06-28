@@ -28,13 +28,15 @@ function Header(props) {
                   </ol>
                 </nav>
               </div>
+
               <div className="col-lg-6 col-5 text-right" style={{ display: disp }}>
+                <a href="/addscreen" className="btn btn-sm btn-neutral"  >Add Screen Test</a>
                 <OverlayTrigger
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
                   overlay={renderTooltip}
                 >
-                  <a href="www.aiocdawacs.com" className="btn btn-sm btn-neutral disabled" style={{display:"none"}}>Add Screen</a>
+                  <span className="btn btn-sm btn-neutral disabled" style={{ display: "none" }}>Add Screen</span>
                 </OverlayTrigger>
                 <OverlayTrigger
                   placement="bottom"

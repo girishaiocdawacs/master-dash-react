@@ -144,17 +144,17 @@ function DashNav() {
             </li>
           </ul>
           <ul className="navbar-nav align-items-center  ml-auto ml-md-0 ">
-            <li className="nav-item dropdown">
-              <a className="nav-link pr-0" href="www.aiocdawacs.com" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li className="nav-item dropdown" onClick={() => { handleShow() }}>
+              <span className="nav-link pr-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div className="media align-items-center">
                   <span className="avatar avatar-sm rounded-circle">
                     <img alt=".." src="../../assets/img/theme/team-1.jpg" />
                   </span>
                   <div className="media-body  ml-2  d-none d-lg-block">
-                    <span className="mb-0 text-sm  font-weight-bold" onClick={() => {handleShow()}}>Shubham Snehi</span>
+                    <span className="mb-0 text-sm  font-weight-bold">{localStorage.getItem("userLogin")}</span>
                   </div>
                 </div>
-              </a>
+              </span>
             </li>
           </ul>
           <Modal show={show} onHide={() => { handleClose() }}>
@@ -163,10 +163,10 @@ function DashNav() {
             </Modal.Header>
             <Modal.Body>Select "Logout" below if you are ready to end your current session.</Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={() => {handleClose()}}>
+              <Button variant="secondary" onClick={() => { handleClose() }}>
                 Cancel
               </Button>
-              <Button variant="danger" onClick={() => {logout()}}>
+              <Button variant="danger" onClick={() => { logout() }}>
                 Logout
               </Button>
             </Modal.Footer>
