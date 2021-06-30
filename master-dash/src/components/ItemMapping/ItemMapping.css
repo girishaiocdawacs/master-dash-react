@@ -1,16 +1,53 @@
-.list{
+.list {
     list-style: none;
 }
 
+.item-row {
+}
 
+.item-row:hover{
+    cursor: pointer;
+    background-color: #5e72e4 ;
+    color: white;
+}
+
+.item-row-selected{
+    cursor: pointer;
+    background-color: #5e72e4 ;
+    color: white;
+}
+
+.map-row {
+}
+
+.map-row:hover{
+    cursor: pointer;
+    background-color: #5e72e4 ;
+    color: white;
+}
+
+.map-row-selected{
+    cursor: pointer;
+    background-color: #5e72e4 ;
+    color: white;
+}
+
+/* @media screen and (min-width: 1200px) {
+    .disp-lg {
+        display: none !important;
+    }
+}
+*/
 @media screen and (max-width: 1200px) {
-    .disp-lg{
-        display: none !important;
+    .second-table {
+        margin-top: 50px !important;
     }
-}
-
+} 
 @media screen and (min-width: 1200px) {
-    .disp-sm{
-        display: none !important;
+    .second-table {
+        margin-left: 40px !important;
     }
-}
+    .first-table {
+        margin-left: 40px !important;
+    }
+} 

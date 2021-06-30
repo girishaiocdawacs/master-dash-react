@@ -5,27 +5,27 @@ import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './SideNav.css';
 import { SideNavData } from './SideNavData';
 import { NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 function SideNav() {
 
-  const [sideNavData, setSideNavData] = useState([])
+  // const [sideNavData, setSideNavData] = useState([])
 
-  useEffect(() => {
-    fetchData()
-  }, [])
+  // useEffect(() => {
+  //   fetchData()
+  // }, [])
 
 
-  function fetchData() {
-    fetch('http://127.0.0.1:5000/SideNavData', {
-      method: 'GET'
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        setSideNavData(json)
-        console.log(String.fromCodePoint(0x1F525),String.fromCodePoint(0x1F621),String.fromCodePoint(0x1F631),String.fromCodePoint(0x1F41E));
-      })
-  }
+  // function fetchData() {
+  //   fetch('http://127.0.0.1:5000/SideNavData', {
+  //     method: 'GET'
+  //   })
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       setSideNavData(json)
+  //       console.log(String.fromCodePoint(0x1F525),String.fromCodePoint(0x1F621),String.fromCodePoint(0x1F631),String.fromCodePoint(0x1F41E));
+  //     })
+  // }
 
   return (
     <nav className="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">

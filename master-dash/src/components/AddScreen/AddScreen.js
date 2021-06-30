@@ -53,7 +53,7 @@ function AddScreen() {
                 <form>
                   <div className="row">
                     <div className="form-group col-3">
-                      <label for="filterName">Filter Columns:<br />
+                      <label htmlFor="filterName">Filter Columns:<br />
                         {filters.map((item, index) => {
                           return (
                             <>

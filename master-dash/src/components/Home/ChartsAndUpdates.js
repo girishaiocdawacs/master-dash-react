@@ -9,9 +9,12 @@ import { Bar } from 'react-chartjs-2';
 
 function ChartsAndUpdates() {
 
-    const [month, setMonth] = useState(["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"]);
-    const [data, setData] = useState([79, 61, 79, 9, 67, 97, 99, 6, 9, 67, 9, 6])
+    // const [month, setMonth] = useState(["January", "February", "March", "April", "May", "June",
+    //     "July", "August", "September", "October", "November", "December"]);
+    const month = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"]
+    // const [data, setData] = useState([79, 61, 79, 9, 67, 97, 99, 6, 9, 67, 9, 6])
+    const data = [79, 61, 79, 9, 67, 97, 99, 6, 9, 67, 9, 6]
     const [chartToggle, setChartToggle] = useState(true)
     const [chartType, setChartType] = useState('Month')
     const monthChart = <Bar
@@ -67,11 +70,11 @@ function ChartsAndUpdates() {
 
     useEffect(() => {
         console.log(chartToggle)
-        if (chartToggle == true) {
+        if (chartToggle === true) {
             setChartType('Month')
             setChart(monthChart)
         }
-        if (chartToggle == false) {
+        if (chartToggle === false) {
             setChartType('Week')
             setChart(weekChart)
         }

@@ -11,7 +11,7 @@ function StockAndSales(props) {
   const [crDate, setCrDate] = useState('')
   const [stkCode, setStkCode] = useState('')
 
-  async function getData(){
+  async function getData() {
     console.log(crDate, stkCode)
 
   }
@@ -31,17 +31,17 @@ function StockAndSales(props) {
                   <div className="h4">Filter:</div>
                   <form className="row">
                     <div className="form-group col">
-                      <label for="crDate">Creatiion Date</label>
+                      <label htmlFor="crDate">Creatiion Date</label>
                       <input type="date" className="form-control" onChange={(e) => setCrDate(e.target.value)} id="crDate" name="crDate" />
                     </div>
                     <div className="form-group col">
-                      <label for="stkCode">Stockist Code</label>
+                      <label htmlFor="stkCode">Stockist Code</label>
                       <input type="text" className="form-control" onChange={(e) => setStkCode(e.target.value)} id="stkCode" name="stkCode" placeholder="Enter Stockist Code" />
                     </div>
                     <div className="form-group col">
-                    <label for="stkCode" style={{color:"white"}} > _</label><br/>
+                      <label htmlFor="stkCode" style={{ color: "white" }} > _</label><br />
 
-                      <button type="button" onClick={() => {getData()}} className="btn btn-primary">Show Data</button>
+                      <button type="button" onClick={() => { getData() }} className="btn btn-primary">Show Data</button>
                     </div>
                   </form>
                 </div>
