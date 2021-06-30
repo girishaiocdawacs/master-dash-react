@@ -2,9 +2,6 @@
     list-style: none;
 }
 
-.item-row {
-}
-
 .item-row:hover{
     cursor: pointer;
     background-color: #5e72e4 ;
@@ -15,9 +12,6 @@
     cursor: pointer;
     background-color: #5e72e4 ;
     color: white;
-}
-
-.map-row {
 }
 
 .map-row:hover{
