@@ -6,17 +6,36 @@ import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './Home.css';
 import { UpdateData } from './UpdateData';
 import { Bar } from 'react-chartjs-2';
+import axios from 'axios';
 
 function ChartsAndUpdates() {
 
-    // const [month, setMonth] = useState(["January", "February", "March", "April", "May", "June",
-    //     "July", "August", "September", "October", "November", "December"]);
-    const month = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"]
-    // const [data, setData] = useState([79, 61, 79, 9, 67, 97, 99, 6, 9, 67, 9, 6])
-    const data = [79, 61, 79, 9, 67, 97, 99, 6, 9, 67, 9, 6]
+    const [month, setMonth] = useState([]);
+    // const month = ["January", "February", "March", "April", "May", "June",
+    //     "July", "August", "September", "October", "November", "December"]
+    const [data, setData] = useState([])
+    // const data = [79, 61, 79, 9, 67, 97, 99, 6, 9, 67, 9, 6]
     const [chartToggle, setChartToggle] = useState(true)
     const [chartType, setChartType] = useState('Month')
+
+    useEffect(() => {
+        let data1 = [], data2 = []
+        axios.get('http://127.0.0.1:5000/AllCounts')
+            .then(res => {
+                for (let i = 0; i < res.data.length; i++) {
+                    data1[i] = res.data[i].count
+                    data2[i] = res.data[i].name
+                }
+                setData(data1)
+                setMonth(data2)
+                setChartToggle(true)
+                // chartChange()   
+                console.log(data1, data2)
+            })
+    }, [])
+
+
+
     const monthChart = <Bar
         data={{
             labels: month,
@@ -63,13 +82,9 @@ function ChartsAndUpdates() {
         }}
     />
 
-    const weekChart = <h1 className="text-white">Week Chart</h1>
-
     const [chart, setChart] = useState(monthChart)
-
-
-    useEffect(() => {
-        console.log(chartToggle)
+    const weekChart = <h1 className="text-white">Week Chart</h1>
+    function chartChange() {
         if (chartToggle === true) {
             setChartType('Month')
             setChart(monthChart)
@@ -78,7 +93,7 @@ function ChartsAndUpdates() {
             setChartType('Week')
             setChart(weekChart)
         }
-    }, [chartToggle])
+    }
 
     return (
         <div className="row">
@@ -92,17 +107,15 @@ function ChartsAndUpdates() {
                             </div>
                             <div className="col">
                                 <ul className="nav nav-pills justify-content-end">
-                                    <li className="nav-item mr-2 mr-md-0" onClick={() => { setChartToggle(!chartToggle) }} >
-                                        <a href="www.aiocdawacs.com" className="nav-link py-2 px-3 active" id="Month" data-toggle="tab">
+                                    <li className="nav-item mr-2 mr-md-0" onClick={() => { setChartToggle(!chartToggle); chartChange() }} >
+                                        <div className="nav-link py-2 px-3 active" id="Month" data-toggle="tab">
                                             <span className="d-none d-md-block">Month</span>
-                                            <span className="d-md-none">M</span>
-                                        </a>
+                                        </div>
                                     </li>
-                                    <li className="nav-item" onClick={() => { setChartToggle(!chartToggle) }}>
-                                        <a href="www.aiocdawacs.com" className="nav-link py-2 px-3" id="Week" data-toggle="tab">
+                                    <li className="nav-item" onClick={() => { setChartToggle(!chartToggle); chartChange() }}>
+                                        <div className="nav-link py-2 px-3" id="Week" data-toggle="tab">
                                             <span className="d-none d-md-block">Week</span>
-                                            <span className="d-md-none">W</span>
-                                        </a>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>

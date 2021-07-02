@@ -12,6 +12,12 @@ import NotFound from '../NotFound/NotFound';
 import ZZ from '../ZZ/ZZ'
 import AddScreen from '../AddScreen/AddScreen';
 import ItemMapping from '../ItemMapping/ItemMapping';
+import ItemMappingUnfreeze from '../ItemMappingUnfreeze/ItemMappingUnfreeze';
+import DivisionWiseMapping from '../DivisionWiseMapping/DivisionWiseMapping';
+import ManufacturerMappingRevoke from '../ManufacturerMappingRevoke/ManufacturerMappingRevoke';
+import NewProductMapping from '../NewProductMapping/NewProductMapping';
+import MergingAndForceShifted from '../MergingAndForceShifted/MergingAndForceShifted';
+import MappingCorrection from '../MappingCorrection/MappingCorrection';
 
 
 function Dashboard() {
@@ -24,11 +30,16 @@ function Dashboard() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
+            <Route path="/zz" component={ZZ} />
             <Route path="/stockandsales" component={StockAndSales} />
             <Route path="/itemmapping" component={ItemMapping} />
-            <Route path="/invoice" component={ZZ} />
-            <Route path="/filedetails" component={Home} />
             <Route path="/addscreen" component={AddScreen} />
+            <Route path="/itemmappingunfreeze" component={ItemMappingUnfreeze} />
+            <Route path="/batchdetails" component={DivisionWiseMapping} />
+            <Route path="/manufacturermappingrevoke" component={ManufacturerMappingRevoke} />
+            <Route path="/newproductmapping" component={NewProductMapping} />
+            <Route path="/mergingandforceshifted" component={MergingAndForceShifted} />
+            <Route path="/mappingcorrection" component={MappingCorrection} />
             <Route path="/*" component={NotFound} />
 
           </Switch>

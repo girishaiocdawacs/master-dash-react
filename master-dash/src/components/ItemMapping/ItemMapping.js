@@ -5,7 +5,6 @@ import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './ItemMapping.css';
 import Header from '../Header/Header';
 import { useState, useEffect } from 'react';
-import { Table } from 'react-bootstrap';
 import * as FiIcon from 'react-icons/fi';
 import * as VscIcon from 'react-icons/vsc';
 import * as GrIcon from 'react-icons/gr';
@@ -32,7 +31,7 @@ function ItemMapping(props) {
   const [othersToMap, setOthersToMap] = useState('')
   const [productsAdded, setProductsAdded] = useState('')
   const [reMap, setReMap] = useState('')
-  const [selectedStates, setSelectedStates] = useState([])
+  // const [selectedStates, setSelectedStates] = useState([])
 
   const [itemMapping, setItemMapping] = useState({
     "fromDate": "",
@@ -160,16 +159,16 @@ function ItemMapping(props) {
   }
   let arr = []
 
-  function selectedState() {
-    let len = document.getElementsByClassName('states').length
-    for (let i = 0; i < len; i++) {
-      if (document.getElementById('states' + i).checked == true) {
-        arr.push(document.getElementById('states' + i).value)
-      }
-    }
-    // setSelectedStates(arr)
-    console.log(selectedStates)
-  }
+  // function selectedState() {
+  //   let len = document.getElementsByClassName('states').length
+  //   for (let i = 0; i < len; i++) {
+  //     if (document.getElementById('states' + i).checked === true) {
+  //       arr.push(document.getElementById('states' + i).value)
+  //     }
+  //   }
+  //   // setSelectedStates(arr)
+  //   console.log(selectedStates)
+  // }
 
   function handleCheck(e) {
     // setSelectedStates([])
@@ -222,11 +221,11 @@ function ItemMapping(props) {
     <div>
       <Header title="Item Mapping" btitle="Item Mapping" disp="none" />
       <div className="container-fluid mt--8" style={{ zIndex: "99" }}>
-        <div className="row small">
+        <div className="row">
           <div className="col-xl col-md">
             <div className="card p-3">
               <form>
-                <div className="row">
+                <div className="row small">
                   <div className="col-5">
                     <div className="form-group col">
                       <label htmlFor="fromDate">Port Date from:&emsp;</label>
@@ -275,6 +274,17 @@ function ItemMapping(props) {
                   <div className="form-group col">
                     <label htmlFor="stkCode">Item Name:&emsp;</label><br />
                     <input type="text" className="form-control-sm" id="stkCode" style={{ width: "140px" }} name="stkCode" placeholder="Enter Item Name" />
+                  </div>
+                  <div className="form-group text-left ml-0 col-4">
+                    <div className="form-group">
+                      <label className="text-primary">_</label><br />
+                      <input type="checkbox" id="discontinuedAWACS" defaultValue="Discontinued AWACS" />
+                      <lable htmlFor="discontinuedAWACS" style={{ cursor: "pointer" }}>&nbsp;Discontinued AWACS</lable>&emsp;
+                      <input type="checkbox" id="allManufacturer" defaultValue="All Manufacturer" />
+                      <lable htmlFor="allManufacturer" style={{ cursor: "pointer" }}>&nbsp;All Manufacturer</lable>&emsp;
+                      <input type="checkbox" id="edeitems" defaultValue="EDE Items" />
+                      <lable htmlFor="edeitems" style={{ cursor: "pointer" }}>&nbsp;EDE Items</lable>
+                    </div>
                   </div>
                 </form>
               </div>

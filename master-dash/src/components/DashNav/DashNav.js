@@ -5,6 +5,7 @@ import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './DashNav.css';
 import { Modal, Button } from 'react-bootstrap';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function DashNav() {
 
@@ -59,14 +60,14 @@ function DashNav() {
               </div> */}
             </li>
             <li className="nav-item d-sm-none">
-              <a className="nav-link" href="www.aiocdawacs.com" data-action="search-show" data-target="#navbar-search-main">
+              <Link className="nav-link" to="www.aiocdawacs.com" data-action="search-show" data-target="#navbar-search-main">
                 <i className="ni ni-zoom-split-in"></i>
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link" href="www.aiocdawacs.com" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <Link className="nav-link" to="www.aiocdawacs.com" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i className="ni ni-bell-55"></i>
-              </a>
+              </Link>
               <div className="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
                 {/* <!-- Dropdown header --> */}
                 <div className="px-3 py-3">
@@ -74,7 +75,7 @@ function DashNav() {
                 </div>
                 {/* <!-- List group --> */}
                 <div className="list-group list-group-flush">
-                  <a href="#!" className="list-group-item list-group-item-action">
+                  <Link to="#!" className="list-group-item list-group-item-action">
                     <div className="row align-items-center">
                       <div className="col-auto">
                         {/* <!-- Avatar --> */}
@@ -92,54 +93,54 @@ function DashNav() {
                         <p className="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 {/* <!-- View all --> */}
-                <a href="#!" className="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+                <Link to="#!" className="dropdown-item text-center text-primary font-weight-bold py-3">View all</Link>
               </div>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link" href="www.aiocdawacs.com" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <Link className="nav-link" to="www.aiocdawacs.com" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i className="ni ni-ungroup"></i>
-              </a>
+              </Link>
               <div className="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default  dropdown-menu-right ">
                 <div className="row shortcuts px-4">
-                  <a href="#!" className="col-4 shortcut-item">
+                  <Link to="#!" className="col-4 shortcut-item">
                     <span className="shortcut-media avatar rounded-circle bg-gradient-red">
                       <i className="ni ni-calendar-grid-58"></i>
                     </span>
                     <small>Calendar</small>
-                  </a>
-                  <a href="#!" className="col-4 shortcut-item">
+                  </Link>
+                  <Link to="#!" className="col-4 shortcut-item">
                     <span className="shortcut-media avatar rounded-circle bg-gradient-orange">
                       <i className="ni ni-email-83"></i>
                     </span>
                     <small>Email</small>
-                  </a>
-                  <a href="#!" className="col-4 shortcut-item">
+                  </Link>
+                  <Link to="#!" className="col-4 shortcut-item">
                     <span className="shortcut-media avatar rounded-circle bg-gradient-info">
                       <i className="ni ni-credit-card"></i>
                     </span>
                     <small>Payments</small>
-                  </a>
-                  <a href="#!" className="col-4 shortcut-item">
+                  </Link>
+                  <Link to="#!" className="col-4 shortcut-item">
                     <span className="shortcut-media avatar rounded-circle bg-gradient-green">
                       <i className="ni ni-books"></i>
                     </span>
                     <small>Reports</small>
-                  </a>
-                  <a href="#!" className="col-4 shortcut-item">
+                  </Link>
+                  <Link to="#!" className="col-4 shortcut-item">
                     <span className="shortcut-media avatar rounded-circle bg-gradient-purple">
                       <i className="ni ni-pin-3"></i>
                     </span>
                     <small>Maps</small>
-                  </a>
-                  <a href="#!" className="col-4 shortcut-item">
+                  </Link>
+                  <Link to="#!" className="col-4 shortcut-item">
                     <span className="shortcut-media avatar rounded-circle bg-gradient-yellow">
                       <i className="ni ni-basket"></i>
                     </span>
                     <small>Shop</small>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </li>

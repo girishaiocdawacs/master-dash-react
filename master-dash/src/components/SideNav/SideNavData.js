@@ -23,23 +23,33 @@ export const SideNavData = [
         icon: <i className="ni ni-check-bold text-red"></i>,
     },
     {
-        title: 'File Details',
-        path: '/filedetails',
+        title: 'Item Mapping Unfreeze',
+        path: '/itemmappingunfreeze',
         icon: <i className="ni ni-palette text-blue"></i>,
     },
     {
-        title: 'Batch Details',
+        title: 'Division Wise Mapping',
         path: '/batchdetails',
         icon: <i className="ni ni-circle-08 text-yellow"></i>,
     },
     {
-        title: 'Invoice Details',
-        path: '/invoice',
+        title: 'Manufacturer Mapping Revoke',
+        path: '/manufacturermappingrevoke',
         icon: <i className="ni ni-briefcase-24 text-dark"></i>,
     },
     {
-        title: 'File Details',
-        path: '/filedetails',
+        title: 'New Product Mapping',
+        path: '/newproductmapping',
+        icon: <i className="ni ni-badge text-green"></i>,
+    },
+    {
+        title: 'Merging and Force Shifted',
+        path: '/mergingandforceshifted',
+        icon: <i className="ni ni-badge text-red"></i>,
+    },
+    {
+        title: 'Mapping Correction',
+        path: '/mappingcorrection',
         icon: <i className="ni ni-badge text-blue"></i>,
     },
 ]

@@ -2,29 +2,34 @@
     list-style: none;
 }
 
-.item-row:hover{
+.item-row:hover {
     cursor: pointer;
-    background-color: #5e72e4 ;
+    background-color: #5e72e4;
     color: white;
 }
 
-.item-row-selected{
+.item-row-selected {
     cursor: pointer;
-    background-color: #5e72e4 ;
+    background-color: #5e72e4;
     color: white;
 }
 
-.map-row:hover{
+.map-row:hover {
     cursor: pointer;
-    background-color: #5e72e4 ;
+    background-color: #5e72e4;
     color: white;
 }
 
-.map-row-selected{
+.map-row-selected {
     cursor: pointer;
-    background-color: #5e72e4 ;
+    background-color: #5e72e4;
     color: white;
 }
+
+/* input[type="checkbox"]:checked + label {
+    border: 3px solid rgb(166, 166, 166);
+    color: red;
+} */
 
 /* @media screen and (min-width: 1200px) {
     .disp-lg {
@@ -32,11 +37,13 @@
     }
 }
 */
+
 @media screen and (max-width: 1200px) {
     .second-table {
         margin-top: 50px !important;
     }
-} 
+}
+
 @media screen and (min-width: 1200px) {
     .second-table {
         margin-left: 40px !important;
@@ -44,4 +51,4 @@
     .first-table {
         margin-left: 40px !important;
     }
-} 
+}

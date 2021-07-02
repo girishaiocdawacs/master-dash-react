@@ -4,6 +4,7 @@ import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './Header.css';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
   const disp = props.disp;
@@ -23,14 +24,14 @@ function Header(props) {
                 <h6 className="h2 text-white d-inline-block mb-0">{props.title}</h6>
                 <nav aria-label="breadcrumb" className="d-none d-md-inline-block ml-md-4">
                   <ol className="breadcrumb breadcrumb-links breadcrumb-dark">
-                    <li className="breadcrumb-item"><a href="/home"><i className="fas fa-home"></i></a></li>
+                    <li className="breadcrumb-item"><Link to="/home"><i className="fas fa-home"></i></Link></li>
                     <li className="breadcrumb-item active" aria-current="page">{props.btitle}</li>
                   </ol>
                 </nav>
               </div>
 
               <div className="col-lg-6 col-5 text-right" style={{ display: disp }}>
-                <a href="/addscreen" className="btn btn-sm btn-neutral"  >Add Screen Test</a>
+                <Link to="/addscreen" className="btn btn-sm btn-neutral"  >Add Screen Test</Link>
                 <OverlayTrigger
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}

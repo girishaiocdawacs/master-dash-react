@@ -5,29 +5,22 @@ import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './Home.css';
 
 import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 
 function Cards() {
 
     const [data, setData] = useState([]);
-    let data1 = []
-    // useMemo(() => data1, [])
 
     useEffect(() => {
-        const fetchData = () => {
-            fetch("http://127.0.0.1:5000/AllCounts", {
-                method: 'GET',
+        let data1 = []
+        axios.get('http://127.0.0.1:5000/AllCounts')
+            .then(res => {
+                for (let i = 0; i < res.data.length; i++) {
+                    data1[res.data[i].name] = res.data[i].count
+                }
+                setData(data1)
             })
-                .then((response) => response.json())
-                .then((json) => {
-                    for (let i = 0; i < json.length; i++) {
-                        data1[json[i].name] = json[i].count
-                    }
-                    setData(data1)
-                    // console.log(data["stock_and_sales"])
-                });
-        }
-        fetchData();
-    }, [data1])
+    }, [])
 
     return (
         <div className="row">

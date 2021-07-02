@@ -8,6 +8,7 @@ import ChartsAndUpdates from './ChartsAndUpdates';
 // import { useState } from 'react'
 // import DashNav from '../DashNav/DashNav';
 import Header from '../Header/Header';
+import { Link } from 'react-router-dom';
 
 function Home(props) {
 
@@ -37,7 +38,7 @@ function Home(props) {
                     <h3 className="mb-0">Page visits</h3>
                   </div>
                   <div className="col text-right">
-                    <a href="#!" className="btn btn-sm btn-primary">See all</a>
+                    <Link to="#!" className="btn btn-sm btn-primary">See all</Link>
                   </div>
                 </div>
               </div>
@@ -136,7 +137,7 @@ function Home(props) {
                     <h3 className="mb-0">Social traffic</h3>
                   </div>
                   <div className="col text-right">
-                    <a href="#!" className="btn btn-sm btn-primary">See all</a>
+                    <Link to="#!" className="btn btn-sm btn-primary">See all</Link>
                   </div>
                 </div>
               </div>

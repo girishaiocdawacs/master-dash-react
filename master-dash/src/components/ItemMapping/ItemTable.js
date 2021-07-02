@@ -43,13 +43,6 @@ function ItemTable() {
         setDoubleClicked2(true)
     }
 
-    function wait(ms) {
-        var d = new Date();
-        var d2 = null;
-        do { d2 = new Date(); }
-        while (d2 - d < ms);
-    }
-
     function mapping() {
         if (doubleClicked1 === true && doubleClicked2 === true) {
             alert(itemClicked + "\n---Married With---\n" + mapClicked)
@@ -76,7 +69,7 @@ function ItemTable() {
     return (
         <>
             <div className="text-center mr-5">
-                <button className="btn m-2 p-2 text-dark btn-info" onClick={() => { mapping() }}>&nbsp;<GIcon.GoGitCompare/>&nbsp;Map&nbsp;</button>
+                <button className="btn m-2 p-2 text-dark btn-info" onClick={() => { mapping() }}>&nbsp;<GIcon.GoGitCompare />&nbsp;&nbsp;Map&nbsp;</button>
                 <button className="btn m-2 p-2 text-dark bg-yellow" onClick={() => { reset() }}>&nbsp;<FiIcon.FiRefreshCw />&nbsp;Reset&nbsp;</button>
             </div>
             <div className="row">
