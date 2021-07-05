@@ -10,18 +10,18 @@ import './Welcome.css';
 function Welcome() {
   if (sessionStorage.getItem('userLogin')) {
     return (
-      <div>
+      <>
         <Dashboard />
         <Footer />
-      </div>
+      </>
     );
   }
   else {
     return (
-      <div>
+      <>
         <Login />
         <Footer />
-      </div>
+      </>
     );
   }
 }

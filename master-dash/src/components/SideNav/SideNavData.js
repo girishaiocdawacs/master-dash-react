@@ -8,6 +8,11 @@ import * as RiIcons from "react-icons/ri";
 
 export const SideNavData = [
     {
+        title: 'Not Found',
+        path: '/hbasfiuk',
+        icon: <i className="ni ni-button-power text-red"></i>,
+    },
+    {
         title: 'Home',
         path: '/home',
         icon: <i className="ni ni-settings text-pink"></i>,

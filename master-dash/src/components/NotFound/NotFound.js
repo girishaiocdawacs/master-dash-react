@@ -4,8 +4,18 @@ import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './NotFound.css';
 import Header from '../Header/Header';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-function NotFound() {
+function NotFound(props) {
+
+  const dtitle = 'Page Not Found'
+  const dbtitle = 'Page Not Found'
+
+  useEffect(() => {
+    props.setTitle(dtitle, dbtitle)
+  }, [dtitle, dbtitle, props])
+
   return (
     <>
       <Header title="NotFound" btitle="NotFound" disp="none" />
@@ -27,4 +37,19 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+const titleStateToProp = (state) => {
+  return {
+    title: state.title,
+    btitle: state.btitle
+  }
+}
+
+const titleDispatch = (dispatch) => {
+  return {
+    setTitle: (dtitle, dbtitle) =>
+      dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
+  }
+}
+
+
+export default connect(titleStateToProp, titleDispatch)(NotFound);

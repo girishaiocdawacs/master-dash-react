@@ -12,7 +12,7 @@ import NotFound from '../NotFound/NotFound';
 import ZZ from '../ZZ/ZZ'
 import AddScreen from '../AddScreen/AddScreen';
 import ItemMapping from '../ItemMapping/ItemMapping';
-import ItemMappingUnfreeze from '../ItemMappingUnfreeze/ItemMappingUnfreeze';
+// import ItemMappingUnfreeze from '../ItemMappingUnfreeze/ItemMappingUnfreeze';
 import DivisionWiseMapping from '../DivisionWiseMapping/DivisionWiseMapping';
 import ManufacturerMappingRevoke from '../ManufacturerMappingRevoke/ManufacturerMappingRevoke';
 import NewProductMapping from '../NewProductMapping/NewProductMapping';
@@ -24,10 +24,10 @@ import React from 'react';
 function Dashboard() {
 
   return (
-    <div>
+    <>
       <Router>
         <SideNav />
-        <div className="main-content" id="panel">
+        <div className="main-content " id="panel">
           <DashNav />
           <Switch>
             <Route exact path="/" component={Home} />
@@ -36,18 +36,18 @@ function Dashboard() {
             <Route path="/stockandsales" component={StockAndSales} />
             <Route path="/itemmapping" component={ItemMapping} />
             <Route path="/addscreen" component={AddScreen} />
-            <Route path="/itemmappingunfreeze" component={ItemMappingUnfreeze} />
+            {/* <Route path="/itemmappingunfreeze" component={ItemMappingUnfreeze} /> */}
             <Route path="/divisionwisemapping" component={DivisionWiseMapping} />
             <Route path="/manufacturermappingrevoke" component={ManufacturerMappingRevoke} />
             <Route path="/newproductmapping" component={NewProductMapping} />
             <Route path="/mergingandforceshifted" component={MergingAndForceShifted} />
             <Route path="/mappingcorrection" component={MappingCorrection} />
+            <Route path="/zz" component={ZZ} />
             <Route path="/*" component={NotFound} />
-
           </Switch>
         </div>
       </Router>
-    </div>
+    </>
   );
 }
 

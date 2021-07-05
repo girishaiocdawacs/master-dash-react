@@ -286,11 +286,11 @@ function ItemMapping(props) {
                     <div className="form-group">
                       <label className="text-primary">_</label><br />
                       <input type="checkbox" id="discontinuedAWACS" defaultValue="Discontinued AWACS" />
-                      <lable htmlFor="discontinuedAWACS" style={{ cursor: "pointer" }}>&nbsp;Discontinued AWACS</lable>&emsp;
+                      <label htmlFor="discontinuedAWACS" style={{ cursor: "pointer" }}>&nbsp;Discontinued AWACS</label>&emsp;
                       <input type="checkbox" id="allManufacturer" defaultValue="All Manufacturer" />
-                      <lable htmlFor="allManufacturer" style={{ cursor: "pointer" }}>&nbsp;All Manufacturer</lable>&emsp;
+                      <label htmlFor="allManufacturer" style={{ cursor: "pointer" }}>&nbsp;All Manufacturer</label>&emsp;
                       <input type="checkbox" id="edeitems" defaultValue="EDE Items" />
-                      <lable htmlFor="edeitems" style={{ cursor: "pointer" }}>&nbsp;EDE Items</lable>
+                      <label htmlFor="edeitems" style={{ cursor: "pointer" }}>&nbsp;EDE Items</label>
                     </div>
                   </div>
                 </form>
@@ -319,7 +319,7 @@ function ItemMapping(props) {
             <div className="card ml-4 p-2 col-md-6">
               <form>
                 <div className="form-group">
-                  <lable htmlFor="mappingType">Mapping Type:</lable>
+                  <label htmlFor="mappingType">Mapping Type:</label>
                   <select onChange={e => setMappingType(e.target.value)} id="mappingType" className="form-control-sm">
                     <option>Select</option>
                     <option>Company Delivery</option>
@@ -331,11 +331,11 @@ function ItemMapping(props) {
                   </select>
                 </div>
                 <div className="form-group">
-                  <lable htmlFor="selection">Selection :</lable>
+                  <label htmlFor="selection">Selection :</label>
                   <input type="text" onChange={e => setSelection(e.target.value)} id="selection" className="form-control-sm" />
                 </div>
                 <div className="form-group">
-                  <lable htmlFor="phase">Phase :</lable>
+                  <label htmlFor="phase">Phase :</label>
                   <select onChange={e => setPhase(e.target.value)} id="phase" className="form-control-sm" placeholder="SANOFI INDIA LTD.">
                     <option>All</option>
                     <option>Phase 1</option>
@@ -346,27 +346,27 @@ function ItemMapping(props) {
               <hr />
               <form>
                 <div className="form-group">
-                  <lable htmlFor="othersToMap"><input type="checkbox" name="othersToMap" onChange={() => { ifChecked() }} id="othersToMap" value="Others to Map" />&nbsp;Others to Map</lable>
+                  <label htmlFor="othersToMap"><input type="checkbox" name="othersToMap" onChange={() => { ifChecked() }} id="othersToMap" value="Others to Map" />&nbsp;Others to Map</label>
                 </div>
                 <div className="form-group">
-                  <lable htmlFor="productsAdded"><input type="checkbox" name="productsAdded" onChange={() => { ifChecked() }} id="productsAdded" value="Product to be added" />&nbsp;Product to be added</lable>
+                  <label htmlFor="productsAdded"><input type="checkbox" name="productsAdded" onChange={() => { ifChecked() }} id="productsAdded" value="Product to be added" />&nbsp;Product to be added</label>
                 </div>
                 <div className="form-group">
-                  <lable ><input type="checkbox" name="reMap" onChange={() => { ifChecked() }} id="reMap" value="View but not mapped items to Re-map" />&nbsp;</lable>
-                  <lable htmlFor="reMap" >&nbsp;View but not mapped items to Re-map</lable>
+                  <label ><input type="checkbox" name="reMap" onChange={() => { ifChecked() }} id="reMap" value="View but not mapped items to Re-map" />&nbsp;</label>
+                  <label htmlFor="reMap" >&nbsp;View but not mapped items to Re-map</label>
                 </div>
               </form>
             </div>
             <div className="card p-2 ml-3 col-md-5">
               <form>
-                <lable htmlFor="allStates"><input type="checkbox" name="checkbox" onChange={() => { allStates() }} id="allStates" value="1" />&nbsp;Select All</lable>
+                <label htmlFor="allStates"><input type="checkbox" name="checkbox" onChange={() => { allStates() }} id="allStates" value="1" />&nbsp;Select All</label>
 
                 <div className="card" >
                   <ul className="list mt-2" style={{ height: "330px", overflow: "hidden", overflowY: "scroll" }}>
                     {states.map((state, index) => {
                       return (
                         <li key={index}>
-                          <lable htmlFor="othersToMap"><input type="checkbox" onClick={(e) => { handleCheck(e); checkAllSelected() }} name="checkbox" className="states" id={"states" + index} value={state} />&nbsp;{state}</lable>
+                          <label htmlFor="othersToMap"><input type="checkbox" onClick={(e) => { handleCheck(e); checkAllSelected() }} name="checkbox" className="states" id={"states" + index} value={state} />&nbsp;{state}</label>
                         </li>
                       );
                     })}

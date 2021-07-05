@@ -3,12 +3,17 @@ import '../../assets/css/argon.css?v=1.2.0';
 import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './SideNav.css';
-import { SideNavData } from './SideNavData';
-import { NavLink } from 'react-router-dom';
+// import { SideNavData } from './SideNavData';
+// import { NavLink } from 'react-router-dom';
+import { Navigation } from 'react-minimal-side-navigation';
+import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
+import { useHistory, useLocation } from "react-router-dom";
 // import { useEffect, useState } from 'react';
-
+// import React from "react";
 function SideNav() {
 
+  const location = useLocation();
+  const history = useHistory();
   // const [sideNavData, setSideNavData] = useState([])
 
   // useEffect(() => {
@@ -34,12 +39,83 @@ function SideNav() {
         <div className="sidenav-header mt-2 align-items-center">
           <img src="../../logo.gif" height="95%" width="80%" alt="..." />
         </div>
-        <div className="navbar-inner">
+        <div className="navbar-inner p-0 m-0">
           {/* <!-- Collapse --> */}
           <div className="collapse navbar-collapse" id="sidenav-collapse-main">
             {/* <!-- Nav items --> */}
-            <ul className="navbar-nav">
-              {SideNavData.map((item, index) => {
+            {/* <ul className="navbar-nav"> */}
+              <Navigation
+                // you can use your own router's api to get itemIdname
+                activeItemId={location.pathname}
+                onSelect={({ itemId }) => {
+                  history.push(itemId);
+                }}
+                items={[
+                  {
+                    title: 'Dashboard',
+                    itemId: '/dashboard',
+                    // you can use your own custom Icon component as well
+                    // elemBefore: () =>is optional
+                  },
+                  {
+                    title: 'Manual Mapping',
+                    itemId: '/management',
+                    subNav: [
+                      {
+                        title: 'Not Found',
+                        itemId: '/hbasfiuk',
+                        elemBefore: () => <i className="ni ni-button-power text-red"></i>,
+                      },
+                      {
+                        title: 'Home',
+                        itemId: '/home',
+                        elemBefore: () => <i className="ni ni-settings text-pink"></i>,
+                      },
+                      {
+                        title: 'Stock and Sales',
+                        itemId: '/stockandsales',
+                        elemBefore: () => <i className="ni ni-chart-bar-32 text-green"></i>,
+                      },
+                      {
+                        title: 'Item Mapping',
+                        itemId: '/itemmapping',
+                        elemBefore: () => <i className="ni ni-check-bold text-red"></i>,
+                      },
+                      // {
+                      //     title: 'Item Mapping Unfreeze',
+                      //     itemId: '/itemmappingunfreeze',
+                      //     elemBefore: () => <i className="ni ni-palette text-blue"></i>,
+                      // },
+                      {
+                        title: 'Division Wise Mapping',
+                        itemId: '/divisionwisemapping',
+                        elemBefore: () => <i className="ni ni-circle-08 text-yellow"></i>,
+                      },
+                      {
+                        title: 'Manufacturer Mapping Revoke',
+                        itemId: '/manufacturermappingrevoke',
+                        elemBefore: () => <i className="ni ni-briefcase-24 text-dark"></i>,
+                      },
+                      {
+                        title: 'New Product Mapping',
+                        itemId: '/newproductmapping',
+                        elemBefore: () => <i className="ni ni-badge text-green"></i>,
+                      },
+                      {
+                        title: 'Merging and Force Shifted',
+                        itemId: '/mergingandforceshifted',
+                        elemBefore: () => <i className="ni ni-badge text-red"></i>,
+                      },
+                      {
+                        title: 'Mapping Correction',
+                        itemId: '/mappingcorrection',
+                        elemBefore: () => <i className="ni ni-badge text-blue"></i>,
+                      },
+                    ],
+                  },
+                ]}
+              />
+              {/* {SideNavData.map((item, index) => {
                 return (
                   <li className="nav-item" key={index}>
                     <NavLink to={item.path} activeClassName="nav-link active" className="nav-link collapsed p-3" href="#page_top" aria-expanded="true">
@@ -48,9 +124,8 @@ function SideNav() {
                     </NavLink>
                   </li>
                 )
-              })}
-
-            </ul>
+              })} */}
+            {/* </ul> */}
             {/* <!-- Divider --> */}
             <hr className="my-3" />
             {/* <!-- Heading --> */}

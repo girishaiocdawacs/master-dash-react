@@ -4,8 +4,18 @@ import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './NewProductMapping.css';
 import Header from '../Header/Header';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-function NewProductMapping() {
+function NewProductMapping(props) {
+
+  const dtitle = 'New Product Mapping'
+  const dbtitle = 'New Product Mapping'
+
+  useEffect(() => {
+    props.setTitle(dtitle, dbtitle)
+  }, [dtitle, dbtitle, props])
+
   return (
     <>
       <Header title="New Product Mapping" btitle="New Product Mapping" disp="none" />
@@ -27,4 +37,18 @@ function NewProductMapping() {
   );
 }
 
-export default NewProductMapping;
+const titleStateToProp = (state) => {
+  return {
+    title: state.title,
+    btitle: state.btitle
+  }
+}
+
+const titleDispatch = (dispatch) => {
+  return {
+    setTitle: (dtitle, dbtitle) =>
+      dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
+  }
+}
+
+export default connect(titleStateToProp, titleDispatch)(NewProductMapping);

@@ -36,15 +36,15 @@ function DashNav(props) {
           {/* <!-- Search form --> */}
           <form className="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
             <div className="form-group mb-0">
-              <div className="col">
-                <h6 className="h2 text-white d-inline-block mb-0">{props.title}</h6>
-                <nav aria-label="breadcrumb" className="d-none d-md-inline-block ml-md-4">
+              {/* <div className=""> */}
+                {/* <h6 className="h2 text-white d-inline-block mb-0">{props.title}</h6> */}
+                <nav aria-label="breadcrumb" className="d-none d-md-inline-block ">
                   <ol className="breadcrumb breadcrumb-links breadcrumb-dark">
-                    <li className="breadcrumb-item"><Link to="/home"><i className="fas fa-home"></i></Link></li>
-                    <li className="breadcrumb-item active" aria-current="page">{props.btitle}</li>
+                    {/* <li className="breadcrumb-item"><Link to="/home"><i className="fas fa-home"></i></Link></li> */}
+                    <li className="breadcrumb-item text-primary" aria-current="page">{props.btitle}</li>
                   </ol>
                 </nav>
-              </div>
+              {/* </div> */}
               {/* SEARCH TEXTBOX */}
               {/* <div className="input-group input-group-alternative input-group-merge">
                 <div className="input-group-prepend">

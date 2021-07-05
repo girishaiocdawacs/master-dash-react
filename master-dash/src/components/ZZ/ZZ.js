@@ -9,8 +9,8 @@ import { useEffect } from 'react';
 
 function ZZ(props) {
 
-  const dtitle = 'Item Mapping'
-  const dbtitle = 'Item Mapping'
+  const dtitle = 'ZZ'
+  const dbtitle = 'ZZ'
 
   useEffect(() => {
     props.setTitle(dtitle, dbtitle)
@@ -24,7 +24,7 @@ function ZZ(props) {
           <div className="col-xl col-md">
             <div className="card">
               <div className="card-title pt-3 pl-5 m-0">
-                <h1>View Report</h1>
+                <h1>View Report - ZZ</h1>
               </div>
               <div className="card-body">
 

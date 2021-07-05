@@ -9,11 +9,11 @@ function StockistItem() {
                     <div className="form-group row">
                         <div className="col-3">
                             <label htmlFor="">Item Name:&nbsp;</label>
-                            <input type="text" id="" name="" className="form-control-sm" />
+                            <input type="text" id="a" name="a" className="form-control-sm" />
                         </div>
                         <div className="col-3">
                             <label htmlFor="">Manufacturer:&nbsp;</label>
-                            <input type="text" id="" name="" defaultValue="CHEQUE COMMISSION" className="form-control-sm" />
+                            <input type="text" id="b" name="b" defaultValue="CHEQUE COMMISSION" className="form-control-sm" />
                         </div>
                         <div className="col-3">
                             <label htmlFor="">Status:&nbsp;</label>
