@@ -18,9 +18,11 @@ import ManufacturerMappingRevoke from '../ManufacturerMappingRevoke/Manufacturer
 import NewProductMapping from '../NewProductMapping/NewProductMapping';
 import MergingAndForceShifted from '../MergingAndForceShifted/MergingAndForceShifted';
 import MappingCorrection from '../MappingCorrection/MappingCorrection';
+import React from 'react';
 
 
 function Dashboard() {
+
   return (
     <div>
       <Router>
@@ -35,7 +37,7 @@ function Dashboard() {
             <Route path="/itemmapping" component={ItemMapping} />
             <Route path="/addscreen" component={AddScreen} />
             <Route path="/itemmappingunfreeze" component={ItemMappingUnfreeze} />
-            <Route path="/batchdetails" component={DivisionWiseMapping} />
+            <Route path="/divisionwisemapping" component={DivisionWiseMapping} />
             <Route path="/manufacturermappingrevoke" component={ManufacturerMappingRevoke} />
             <Route path="/newproductmapping" component={NewProductMapping} />
             <Route path="/mergingandforceshifted" component={MergingAndForceShifted} />

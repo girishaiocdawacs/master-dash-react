@@ -10,6 +10,7 @@ import * as VscIcon from 'react-icons/vsc';
 import * as GrIcon from 'react-icons/gr';
 import { Modal, Button } from 'react-bootstrap';
 import ItemTable from './ItemTable';
+import { connect } from 'react-redux';
 
 function ItemMapping(props) {
 
@@ -32,6 +33,8 @@ function ItemMapping(props) {
   const [productsAdded, setProductsAdded] = useState('')
   const [reMap, setReMap] = useState('')
   // const [selectedStates, setSelectedStates] = useState([])
+  const dtitle = 'Item Mapping'
+  const dbtitle = 'Item Mapping'
 
   const [itemMapping, setItemMapping] = useState({
     "fromDate": "",
@@ -217,6 +220,10 @@ function ItemMapping(props) {
     })
   }
 
+  useEffect(() => {
+    props.setTitle(dtitle, dbtitle)
+  }, [dtitle, dbtitle, props])
+
   return (
     <div>
       <Header title="Item Mapping" btitle="Item Mapping" disp="none" />
@@ -385,4 +392,18 @@ function ItemMapping(props) {
   );
 }
 
-export default ItemMapping;
+const titleStateToProp = (state) => {
+  return {
+    title: state.title,
+    btitle: state.btitle
+  }
+}
+
+const titleDispatch = (dispatch) => {
+  return {
+    setTitle: (dtitle, dbtitle) =>
+      dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
+  }
+}
+
+export default connect(titleStateToProp, titleDispatch)(ItemMapping);

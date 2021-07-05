@@ -22,14 +22,14 @@ export const SideNavData = [
         path: '/itemmapping',
         icon: <i className="ni ni-check-bold text-red"></i>,
     },
-    {
-        title: 'Item Mapping Unfreeze',
-        path: '/itemmappingunfreeze',
-        icon: <i className="ni ni-palette text-blue"></i>,
-    },
+    // {
+    //     title: 'Item Mapping Unfreeze',
+    //     path: '/itemmappingunfreeze',
+    //     icon: <i className="ni ni-palette text-blue"></i>,
+    // },
     {
         title: 'Division Wise Mapping',
-        path: '/batchdetails',
+        path: '/divisionwisemapping',
         icon: <i className="ni ni-circle-08 text-yellow"></i>,
     },
     {

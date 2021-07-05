@@ -9,6 +9,8 @@ import ChartsAndUpdates from './ChartsAndUpdates';
 // import DashNav from '../DashNav/DashNav';
 import Header from '../Header/Header';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { useEffect } from 'react';
 
 function Home(props) {
 
@@ -22,10 +24,18 @@ function Home(props) {
   //       console.log(json);
   //     });
   // }
+  const dtitle = 'Home'
+  const dbtitle = 'Home'
+
+  useEffect(() => {
+    props.setTitle(dtitle, dbtitle)
+  }, [dtitle, dbtitle, props])
+
+
 
   return (
     <div>
-      <Header title="Home" btitle="Home" disp="show" />
+      <Header title="Home" btitle="Home" disp="none " />
       <div className="container-fluid mt--8">
         <Cards />
         <ChartsAndUpdates />
@@ -253,4 +263,18 @@ function Home(props) {
   );
 }
 
-export default Home;
+const titleStateToProp = (state) => {
+  return {
+      title: state.title,
+      btitle: state.btitle
+  }
+  }
+  
+  const titleDispatch = (dispatch) => {
+  return {
+      setTitle: (dtitle, dbtitle) =>
+      dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
+  }
+  }
+
+export default connect(titleStateToProp, titleDispatch)(Home);

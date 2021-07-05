@@ -7,12 +7,20 @@ import Header from '../Header/Header';
 import * as BiIcon from 'react-icons/bi';
 import * as VscIcon from 'react-icons/vsc';
 import { Tab, Tabs } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DivisionMapping from './DivisionMapping';
 import StockistItem from './StockistItem';
+import { connect } from 'react-redux';
 
+function DivisionWiseMapping(props) {
 
-function DivisionWiseMapping() {
+  const dtitle = 'Division Wise Mapping'
+const dbtitle = 'Division Wise Mapping'
+
+useEffect(() => {
+    props.setTitle(dtitle, dbtitle)
+  }, [dtitle, dbtitle, props])
+
 
   const [key, setKey] = useState('DivisionMapping');
 
@@ -65,4 +73,19 @@ function DivisionWiseMapping() {
   );
 }
 
-export default DivisionWiseMapping;
+const titleStateToProp = (state) => {
+  return {
+      title: state.title,
+      btitle: state.btitle
+  }
+  }
+  
+  const titleDispatch = (dispatch) => {
+  return {
+      setTitle: (dtitle, dbtitle) =>
+      dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
+  }
+  }
+  
+  
+export default connect(titleStateToProp, titleDispatch)(DivisionWiseMapping);

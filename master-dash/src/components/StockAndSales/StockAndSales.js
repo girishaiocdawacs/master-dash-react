@@ -4,9 +4,17 @@ import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './StockAndSales.css';
 import Header from '../Header/Header';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
 function StockAndSales(props) {
+
+  const dtitle = 'Stock and Sales'
+  const dbtitle = 'Stock and Sales'
+
+  useEffect(() => {
+    props.setTitle(dtitle, dbtitle)
+  }, [dtitle, dbtitle, props])
 
   const [crDate, setCrDate] = useState('')
   const [stkCode, setStkCode] = useState('')
@@ -54,4 +62,19 @@ function StockAndSales(props) {
   );
 }
 
-export default StockAndSales;
+const titleStateToProp = (state) => {
+  return {
+      title: state.title,
+      btitle: state.btitle
+  }
+  }
+  
+  const titleDispatch = (dispatch) => {
+  return {
+      setTitle: (dtitle, dbtitle) =>
+      dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
+  }
+  }
+  
+
+export default connect(titleStateToProp, titleDispatch)(StockAndSales);
