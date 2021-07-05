@@ -37,13 +37,13 @@ function DashNav(props) {
           <form className="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
             <div className="form-group mb-0">
               {/* <div className=""> */}
-                {/* <h6 className="h2 text-white d-inline-block mb-0">{props.title}</h6> */}
-                <nav aria-label="breadcrumb" className="d-none d-md-inline-block ">
-                  <ol className="breadcrumb breadcrumb-links breadcrumb-dark">
-                    {/* <li className="breadcrumb-item"><Link to="/home"><i className="fas fa-home"></i></Link></li> */}
-                    <li className="breadcrumb-item text-primary" aria-current="page">{props.btitle}</li>
-                  </ol>
-                </nav>
+              {/* <h6 className="h2 text-white d-inline-block mb-0">{props.title}</h6> */}
+              <nav aria-label="breadcrumb" className="d-none d-md-inline-block ">
+                <ol className="breadcrumb breadcrumb-links breadcrumb-dark">
+                  {/* <li className="breadcrumb-item"><Link to="/home"><i className="fas fa-home"></i></Link></li> */}
+                  <li className="breadcrumb-item text-primary" aria-current="page">{props.btitle}</li>
+                </ol>
+              </nav>
               {/* </div> */}
               {/* SEARCH TEXTBOX */}
               {/* <div className="input-group input-group-alternative input-group-merge">
@@ -71,14 +71,14 @@ function DashNav(props) {
               </div> */}
             </li>
             <li className="nav-item d-sm-none">
-              <Link className="nav-link" to="www.aiocdawacs.com" data-action="search-show" data-target="#navbar-search-main">
+              <div className="nav-link" data-action="search-show" data-target="#navbar-search-main">
                 <i className="ni ni-zoom-split-in"></i>
-              </Link>
+              </div>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link" to="www.aiocdawacs.com" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i className="ni ni-bell-55"></i>
-              </Link>
+              </div>
               <div className="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
                 {/* <!-- Dropdown header --> */}
                 <div className="px-3 py-3">
@@ -111,9 +111,9 @@ function DashNav(props) {
               </div>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link" to="www.aiocdawacs.com" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div className="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i className="ni ni-ungroup"></i>
-              </Link>
+              </div>
               <div className="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default  dropdown-menu-right ">
                 <div className="row shortcuts px-4">
                   <Link to="#!" className="col-4 shortcut-item">
@@ -201,8 +201,8 @@ function DashNav(props) {
 
 const mapStateToProp = (state) => {
   return {
-      title: state.title,
-      btitle: state.btitle
+    title: state.title,
+    btitle: state.btitle
   }
 }
 

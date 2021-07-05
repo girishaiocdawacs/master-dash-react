@@ -3,7 +3,7 @@ import '../../assets/css/argon.css?v=1.2.0';
 import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './SideNav.css';
-// import { SideNavData } from './SideNavData';
+import * as Data from './SideNavData';
 // import { NavLink } from 'react-router-dom';
 import { Navigation } from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
@@ -44,121 +44,50 @@ function SideNav() {
           <div className="collapse navbar-collapse" id="sidenav-collapse-main">
             {/* <!-- Nav items --> */}
             {/* <ul className="navbar-nav"> */}
-              <Navigation
-                // you can use your own router's api to get itemIdname
-                activeItemId={location.pathname}
-                onSelect={({ itemId }) => {
-                  history.push(itemId);
-                }}
-                items={[
-                  {
-                    title: 'Dashboard',
-                    itemId: '/dashboard',
-                    // you can use your own custom Icon component as well
-                    // elemBefore: () =>is optional
-                  },
-                  {
-                    title: 'Manual Mapping',
-                    itemId: '/management',
-                    subNav: [
-                      {
-                        title: 'Not Found',
-                        itemId: '/hbasfiuk',
-                        elemBefore: () => <i className="ni ni-button-power text-red"></i>,
-                      },
-                      {
-                        title: 'Home',
-                        itemId: '/home',
-                        elemBefore: () => <i className="ni ni-settings text-pink"></i>,
-                      },
-                      {
-                        title: 'Stock and Sales',
-                        itemId: '/stockandsales',
-                        elemBefore: () => <i className="ni ni-chart-bar-32 text-green"></i>,
-                      },
-                      {
-                        title: 'Item Mapping',
-                        itemId: '/itemmapping',
-                        elemBefore: () => <i className="ni ni-check-bold text-red"></i>,
-                      },
-                      // {
-                      //     title: 'Item Mapping Unfreeze',
-                      //     itemId: '/itemmappingunfreeze',
-                      //     elemBefore: () => <i className="ni ni-palette text-blue"></i>,
-                      // },
-                      {
-                        title: 'Division Wise Mapping',
-                        itemId: '/divisionwisemapping',
-                        elemBefore: () => <i className="ni ni-circle-08 text-yellow"></i>,
-                      },
-                      {
-                        title: 'Manufacturer Mapping Revoke',
-                        itemId: '/manufacturermappingrevoke',
-                        elemBefore: () => <i className="ni ni-briefcase-24 text-dark"></i>,
-                      },
-                      {
-                        title: 'New Product Mapping',
-                        itemId: '/newproductmapping',
-                        elemBefore: () => <i className="ni ni-badge text-green"></i>,
-                      },
-                      {
-                        title: 'Merging and Force Shifted',
-                        itemId: '/mergingandforceshifted',
-                        elemBefore: () => <i className="ni ni-badge text-red"></i>,
-                      },
-                      {
-                        title: 'Mapping Correction',
-                        itemId: '/mappingcorrection',
-                        elemBefore: () => <i className="ni ni-badge text-blue"></i>,
-                      },
-                    ],
-                  },
-                ]}
-              />
-              {/* {SideNavData.map((item, index) => {
-                return (
-                  <li className="nav-item" key={index}>
-                    <NavLink to={item.path} activeClassName="nav-link active" className="nav-link collapsed p-3" href="#page_top" aria-expanded="true">
-                      {item.icon}
-                      <span className="nav-link-text">{item.title}</span>
-                    </NavLink>
-                  </li>
-                )
-              })} */}
-            {/* </ul> */}
-            {/* <!-- Divider --> */}
-            <hr className="my-3" />
-            {/* <!-- Heading --> */}
-            <h6 className="navbar-heading p-0 text-muted">
-              <span className="docs-normal">Documentation</span>
-            </h6>
-            {/* <!-- Navigation --> */}
-            <ul className="navbar-nav mb-md-3">
-              <li className="nav-item">
-                <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
-                  <i className="ni ni-spaceship"></i>
-                  <span className="nav-link-text">Getting started</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
-                  <i className="ni ni-palette"></i>
-                  <span className="nav-link-text">Foundation</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
-                  <i className="ni ni-ui-04"></i>
-                  <span className="nav-link-text">Components</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html">
-                  <i className="ni ni-chart-pie-35"></i>
-                  <span className="nav-link-text">Plugins</span>
-                </a>
-              </li>
-            </ul>
+            <Navigation
+              // you can use your own router's api to get itemIdname
+              activeItemId={location.pathname}
+              onSelect={({ itemId }) => {
+                history.push(itemId);
+              }}
+              items={[
+                {
+                  title: 'Home',
+                  itemId: '/home',
+                  elemBefore: () => <i className="fas fa-home text-pink"></i>,
+                },
+                {
+                  title: 'Not Found',
+                  itemId: '/hbasfiuk',
+                  elemBefore: () => <i className="ni ni-button-power text-red"></i>,
+                },
+                {
+                  title: 'Product Mapping',
+                  itemId: '/location1',
+                  subNav: Data.ProductMapping,
+                },
+                {
+                  title: 'Manual Mapping',
+                  itemId: '/itemmapping',
+                  subNav: Data.ManualMapping,
+                },
+                {
+                  title: 'Mapping QC',
+                  itemId: '/mappingqc',
+                  subNav: Data.MappingQC,
+                },
+                {
+                  title: 'Emailan Porting',
+                  itemId: '/location4',
+                  subNav: Data.EmailanPorting,
+                },
+                {
+                  title: 'MSCDA Porting',
+                  itemId: '/location5',
+                  subNav: Data.MSCDAPorting,
+                },
+              ]}
+            />
           </div>
         </div>
       </div>
