@@ -1,25 +1,25 @@
-import React from 'react';
+import React from 'react'
 import { Table } from 'react-bootstrap';
 
-function DivisionMapping() {
+
+function ManufacturerMapping() {
     return (
         <div className="mt-2">
             <div className="row">
-                <div className="col-lg-8 ">
+                <div className="col-lg-6 ">
                     <div className="col">
                         <div className="col">
-                            <input type="checkbox" id="masterdivision" name="masterdivision" />&nbsp;
-                            <label htmlFor="masterdivision">Master Division</label>
+                            <label htmlFor="masterdivision" className="h3">Master Manufacturer</label>
                             &emsp;&emsp;&emsp;&emsp;
                             <input type="checkbox" id="mappeditemcount" name="mappeditemcount" />&nbsp;
                             <label htmlFor="mappeditemcount">Mapped Item Count</label>
                         </div>
                     </div>
                     <div className="col p-2">
-                        <input type="text" className="form-control-sm" size="100" />
+                        <input type="text" className="form-control-sm" size="65" />
                     </div>
                     <div className="col bg-primary mt-2">
-                        <h3 className="p-0 m-0 ml-2 text-white">Cheque Commission</h3>
+                        <h3 className="p-0 m-0 ml-2 text-white">Yellow</h3>
                     </div>
                     <div>
                         <Table bordered responsive size="sm">
@@ -44,7 +44,7 @@ function DivisionMapping() {
                         </Table>
                     </div>
                 </div>
-                <div className="col-lg-4 m-0 border-left">
+                <div className="col-lg-6 m-0 border-left">
                     {/* <div className="col"> */}
                     <div className="row small p-0 m-0">
                         <div className="p-0 form-group col">
@@ -59,6 +59,7 @@ function DivisionMapping() {
                             <input type="checkbox" className="" id="multiselect" name="multiselect" />&nbsp;
                             <label htmlFor="multiselect">Multi Select</label>
                             &emsp;&emsp;&emsp;&emsp;
+                            &emsp;&emsp;
                             <input type="checkbox" className="" id="selectall" name="selectall" disabled />&nbsp;
                             <label htmlFor="selectall" className="disabled">Select All</label>
                         </div>
@@ -87,4 +88,4 @@ function DivisionMapping() {
     )
 }
 
-export default DivisionMapping;
+export default ManufacturerMapping

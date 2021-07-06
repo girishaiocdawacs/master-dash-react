@@ -76,7 +76,7 @@ function ItemTable() {
                 {/* FIRST TABLE */}
                 <div className="first-table bg-white col-lg-5 border">
                     <div style={{ height: "350px", overflow: "hidden", overflowY: "scroll" }}>
-                        <Table responsive bordered size="sm">
+                        <Table bordered responsive size="sm">
                             <thead className="table-dark">
                                 <tr>
                                     <th style={{ width: "50px" }}>SKU</th>

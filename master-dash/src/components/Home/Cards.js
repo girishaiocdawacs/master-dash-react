@@ -30,7 +30,7 @@ function Cards() {
                     <div className="card-body">
                         <div className="row">
                             <div className="col">
-                                <h5 className="card-title text-uppercase text-muted mb-0">Stock and Sales Files</h5>
+                                <h5 className="card-title text-uppercase text-muted mb-0">Stock n Sales Files</h5>
                                 <span className="h2 font-weight-bold mb-0">{data["stock_and_sales"]}</span>
                             </div>
                             <div className="col-auto">
@@ -62,7 +62,7 @@ function Cards() {
                             </div>
                         </div>
                         <p className="mt-3 mb-0 text-sm">
-                            <span className="text-danger mr-2"><i className="fa fa-arrow-down"></i>3.02%</span>
+                            <span className="text-danger mr-2"><i className="fa fa-arrow-down"></i> 3.02%</span>
                             <span className="text-nowrap">Since last month</span>
                         </p>
                     </div>
@@ -84,7 +84,7 @@ function Cards() {
                             </div>
                         </div>
                         <p className="mt-3 mb-0 text-sm">
-                            <span className="text-success mr-2"><i className="fa fa-arrow-up"></i> 13.93%</span>
+                            <span className="text-danger mr-2"><i className="fa fa-arrow-down"></i> 13.93%</span>
                             <span className="text-nowrap">Since last month</span>
                         </p>
                     </div>
@@ -116,4 +116,4 @@ function Cards() {
     )
 }
 
-export default Cards
+export default Cards;

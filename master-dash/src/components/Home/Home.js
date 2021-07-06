@@ -36,7 +36,7 @@ function Home(props) {
   return (
     <div>
       <Header title="Home" btitle="Home" disp="none " />
-      <div className="container-fluid mt--8">
+      <div className="container-fluid mt--9">
         <Cards />
         <ChartsAndUpdates />
         <div className="row">
@@ -265,16 +265,16 @@ function Home(props) {
 
 const titleStateToProp = (state) => {
   return {
-      title: state.title,
-      btitle: state.btitle
+    title: state.title,
+    btitle: state.btitle
   }
-  }
-  
-  const titleDispatch = (dispatch) => {
+}
+
+const titleDispatch = (dispatch) => {
   return {
-      setTitle: (dtitle, dbtitle) =>
+    setTitle: (dtitle, dbtitle) =>
       dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
   }
-  }
+}
 
 export default connect(titleStateToProp, titleDispatch)(Home);

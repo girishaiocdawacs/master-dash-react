@@ -19,7 +19,7 @@ function NewProductMapping(props) {
   return (
     <>
       <Header title="New Product Mapping" btitle="New Product Mapping" disp="none" />
-      <div className="container-fluid mt--8">
+      <div className="container-fluid mt--9">
         <div className="row">
           <div className="col-xl col-md">
             <div className="card">

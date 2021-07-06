@@ -19,15 +19,18 @@ function NotFound(props) {
   return (
     <>
       <Header title="NotFound" btitle="NotFound" disp="none" />
-      <div className="container-fluid mt--8">
+      <div className="container-fluid mt--9">
         <div className="row">
           <div className="col-xl col-md">
-            <div className="card">
-              <div className="card-title pt-3 pl-5 m-0">
+            <div className="card p-3 row">
+              <div className="row p-2">
+                <div className="col-7 p-5">
                 <h1>Page not found or Under construction!</h1>
                 <h4>{"->"}&nbsp;Try contacting IT-Support Team!</h4>
-              </div>
-              <div className="card">
+                </div>
+                <div className="col">
+                <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_TCUI9w/thumbs_down.json" background="transparent" speed="1" style={{ width: "200px", height: "200px" }} loop autoplay ></lottie-player>
+                </div>
               </div>
             </div>
           </div>

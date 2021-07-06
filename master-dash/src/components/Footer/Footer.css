@@ -1,0 +1,9 @@
+.footer-link {
+    color: aqua;
+}
+
+.footer-link:hover {
+    color: burlywood;
+    cursor: pointer;
+    text-decoration: underline;
+}

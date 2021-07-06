@@ -7,7 +7,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div className="bg-default text-white text-center">
-      <p>Copyrights 2021 &copy; &emsp;<a href="https://aiocdawacs.com">AIOCD AWACS Pharmasofttech</a></p>
+      <p>Copyrights 2021 &copy; &nbsp;<span className="footer-link" onClick={()=> window.open("https://aiocdawacs.com", "_blank")}>AIOCD AWACS Pharmasofttech Pvt. Ltd.</span></p>
     </div>
   );
 }

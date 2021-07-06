@@ -27,7 +27,7 @@ function StockAndSales(props) {
   return (
     <div>
       <Header title="Stock and Sales" btitle="Stock and Sales" disp="none" />
-      <div className="container-fluid mt--8">
+      <div className="container-fluid mt--9">
         <div className="row">
           <div className="col-xl col-md">
             <div className="card">
@@ -64,17 +64,17 @@ function StockAndSales(props) {
 
 const titleStateToProp = (state) => {
   return {
-      title: state.title,
-      btitle: state.btitle
+    title: state.title,
+    btitle: state.btitle
   }
-  }
-  
-  const titleDispatch = (dispatch) => {
+}
+
+const titleDispatch = (dispatch) => {
   return {
-      setTitle: (dtitle, dbtitle) =>
+    setTitle: (dtitle, dbtitle) =>
       dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
   }
-  }
-  
+}
+
 
 export default connect(titleStateToProp, titleDispatch)(StockAndSales);

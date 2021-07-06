@@ -38,7 +38,7 @@ function MappingCorrection(props) {
   return (
     <>
       <Header title="Mapping Correction" btitle="Mapping Correction" disp="none" />
-      <div className="container-fluid mt--8">
+      <div className="container-fluid mt--9">
         <div className="row">
           <div className="col-xl col-md">
             <div className="card">
@@ -56,7 +56,7 @@ function MappingCorrection(props) {
               </div>
             </div>
             <div className="card p-3">
-              <Table responsive>
+              <Table bordered responsive>
                 <thead className="bg-dark text-white">
                   <tr>
                     <th>DISTRIBUTOR_SHORTCODE</th>

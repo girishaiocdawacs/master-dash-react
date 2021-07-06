@@ -26,7 +26,7 @@ function StockistItem() {
             </div>
             <div className="row">
                 <div className="col">
-                    <Table responsive size="sm">
+                    <Table bordered responsive size="sm">
                         <thead className="bg-dark text-white">
                             <tr>
                                 <th>S. No.</th>

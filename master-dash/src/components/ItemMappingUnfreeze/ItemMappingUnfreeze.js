@@ -9,7 +9,7 @@ function ItemMappingUnfreeze() {
   return (
     <>
       <Header title="Item Mapping Unfreeze" btitle="Item Mapping Unfreeze" disp="none" />
-      <div className="container-fluid mt--8">
+      <div className="container-fluid mt--9">
         <div className="row">
           <div className="col-xl col-md">
             <div className="card">

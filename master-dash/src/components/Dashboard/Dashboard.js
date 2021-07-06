@@ -23,6 +23,7 @@ import MappingQCReport from '../MappingQCReport/MappingQCReport';
 import WrongMappingQC from '../WrongMappingQC/WrongMappingQC';
 import ListOfMappedItems from '../ListOfMappedItems/ListOfMappedItems';
 import MappingQC from '../MappingQC/MappingQC';
+import UBUMFRMapping from '../UBUMFRMapping/UBUMFRMapping';
 
 
 function Dashboard() {
@@ -39,6 +40,7 @@ function Dashboard() {
             <Route path="/zz" component={ZZ} />
             {/* Manual Mapping */}
             <Route path="/stockandsales" component={StockAndSales} />
+            <Route path="/ubumfrmapping" component={UBUMFRMapping} />
             <Route path="/itemmapping" component={ItemMapping} />
             <Route path="/addscreen" component={AddScreen} />
             {/* <Route path="/itemmappingunfreeze" component={ItemMappingUnfreeze} /> */}

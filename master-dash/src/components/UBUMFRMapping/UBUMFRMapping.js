@@ -2,28 +2,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/css/argon.css?v=1.2.0';
 import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
-import './DivisionWiseMapping.css';
+import './UBUMFRMapping.css';
 import Header from '../Header/Header';
+import { connect } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { Tab, Tabs } from 'react-bootstrap';
 import * as BiIcon from 'react-icons/bi';
 import * as VscIcon from 'react-icons/vsc';
-import { Tab, Tabs } from 'react-bootstrap';
-import { useEffect, useState } from 'react';
-import DivisionMapping from './DivisionMapping';
 import StockistItem from './StockistItem';
-import { connect } from 'react-redux';
+import ManufacturerMapping from './ManufacturerMapping';
 
-function DivisionWiseMapping(props) {
+function UBUMFRMapping(props) {
 
-  const dtitle = 'Division Wise Mapping'
-  const dbtitle = 'Division Wise Mapping'
+  const dtitle = 'UBU (MFR) Mapping'
+  const dbtitle = 'UBU (MFR) Mapping'
 
   useEffect(() => {
     props.setTitle(dtitle, dbtitle)
   }, [dtitle, dbtitle, props])
 
-
   const [key, setKey] = useState('DivisionMapping');
-
 
   function loadNew() {
     console.log("Load New Function")
@@ -33,22 +31,27 @@ function DivisionWiseMapping(props) {
     console.log("Clear Function")
   }
 
+  function search() {
+    console.log("Search Function")
+  }
+
   function exitAll() {
     console.log("Exit Function")
   }
 
   return (
     <>
-      <Header title="Division Wise Mapping" btitle="Division Wise Mapping" disp="none" />
+      <Header title="UBU (MFR) Mapping" btitle="UBU (MFR) Mapping" disp="none" />
       <div className="container-fluid mt--9">
         <div className="row">
           <div className="col-xl col-md">
             <div className="card">
-              <div className="card-title pt-3 pl-5 m-0">
+              <div className="card-title col-8 pt-3 pl-5 m-0">
                 <div className="form-group row mr-4">
-                  <button className="btn btn-sm col-1 text-white btn-primary" onClick={() => loadNew()}><i className="ni ni-cloud-download-95"></i>&nbsp;Load New</button>
-                  <button className="btn btn-sm col-1 bg-yellow" onClick={() => clearAll()}><VscIcon.VscClearAll />&nbsp;Clear</button>
-                  <button className="btn btn-sm col-1 btn-danger" onClick={() => exitAll()}><BiIcon.BiExit /> &nbsp;Exit</button>
+                  <button className="btn btn-sm col-sm-2 text-white btn-primary" onClick={() => loadNew()}><i className="ni ni-cloud-download-95"></i>&nbsp;Load New</button>
+                  <button className="btn btn-sm col-sm-2 bg-yellow" onClick={() => clearAll()}><VscIcon.VscClearAll />&nbsp;Clear</button>
+                  <button className="btn btn-sm col-sm-2 btn-danger" onClick={() => exitAll()}><BiIcon.BiExit /> &nbsp;Exit</button>
+                  <button className="btn btn-sm col-sm-2 text-white bg-green" onClick={() => search()}><BiIcon.BiExit /> &nbsp;Search</button>
                 </div>
               </div>
             </div>
@@ -59,7 +62,7 @@ function DivisionWiseMapping(props) {
                 onSelect={(k) => setKey(k)}
               >
                 <Tab eventKey="DivisionMapping" title="Division Mapping">
-                  <DivisionMapping />
+                  <ManufacturerMapping />
                 </Tab>
                 <Tab eventKey="Stockist Item" title="Stockist Item">
                   <StockistItem />
@@ -88,4 +91,4 @@ const titleDispatch = (dispatch) => {
 }
 
 
-export default connect(titleStateToProp, titleDispatch)(DivisionWiseMapping);
+export default connect(titleStateToProp, titleDispatch)(UBUMFRMapping);

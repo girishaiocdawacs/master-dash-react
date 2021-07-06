@@ -10,16 +10,16 @@ import { useEffect } from 'react';
 function MergingAndForceShifted(props) {
 
   const dtitle = 'Merging and Force Shifted'
-const dbtitle = 'Merging and Force Shifted'
+  const dbtitle = 'Merging and Force Shifted'
 
-useEffect(() => {
+  useEffect(() => {
     props.setTitle(dtitle, dbtitle)
   }, [dtitle, dbtitle, props])
 
   return (
     <>
       <Header title="Merging And Force Shifted" btitle="Merging And Force Shifted" disp="none" />
-      <div className="container-fluid mt--8">
+      <div className="container-fluid mt--9">
         <div className="row">
           <div className="col-xl col-md">
             <div className="card">
@@ -39,16 +39,16 @@ useEffect(() => {
 
 const titleStateToProp = (state) => {
   return {
-      title: state.title,
-      btitle: state.btitle
+    title: state.title,
+    btitle: state.btitle
   }
-  }
-  
-  const titleDispatch = (dispatch) => {
+}
+
+const titleDispatch = (dispatch) => {
   return {
-      setTitle: (dtitle, dbtitle) =>
+    setTitle: (dtitle, dbtitle) =>
       dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
   }
-  }
+}
 
 export default connect(titleStateToProp, titleDispatch)(MergingAndForceShifted);

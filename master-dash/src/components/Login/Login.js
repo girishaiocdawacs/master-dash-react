@@ -12,7 +12,7 @@ function Login() {
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
   const [loginDtl, setLoginDtl] = useState({})
-  // const [redirect, setRedirect] = useState(false)
+  const [userType, setUserType] = useState('')
 
   function login() {
     if (pass === '' || email === '') {
@@ -34,8 +34,8 @@ function Login() {
   }
 
   function validateUser() {
-    console.log(email, pass)
-    fetch("http://127.0.0.1:5000/Login/" + email + "/" + pass, {
+    console.log(email, pass, userType)
+    fetch("http://127.0.0.1:5000/Login/" + email + "/" + pass + "/" + userType, {
       method: 'GET',
     })
       .then((response) => response.json())
@@ -73,7 +73,14 @@ function Login() {
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" id="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Enter email" />
                   </Form.Group>
-
+                  <Form.Group>
+                  <Form.Label>User Type</Form.Label>
+                    <select className="form-control" id="userType" onChange={e => setUserType(e.target.value)}  >
+                      <option>Select Type</option>
+                      <option value="Mapping">Mapping</option>
+                      <option value="Audit Process">Audit Process</option>
+                    </select>
+                  </Form.Group>
                   <Form.Group>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" id="pass" onChange={(e) => { setPass(e.target.value) }} placeholder="Password" />

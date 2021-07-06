@@ -227,7 +227,7 @@ function ItemMapping(props) {
   return (
     <div>
       <Header title="Item Mapping" btitle="Item Mapping" disp="none" />
-      <div className="container-fluid mt--8" style={{ zIndex: "99" }}>
+      <div className="container-fluid mt--9" style={{ zIndex: "99" }}>
         <div className="row">
           <div className="col-xl col-md">
             <div className="card p-3">
@@ -282,7 +282,7 @@ function ItemMapping(props) {
                     <label htmlFor="stkCode">Item Name:&emsp;</label><br />
                     <input type="text" className="form-control-sm" id="stkCode" style={{ width: "140px" }} name="stkCode" placeholder="Enter Item Name" />
                   </div>
-                  <div className="form-group text-left ml-0 col-4">
+                  <div className="form-group text-left ml-0 col-5">
                     <div className="form-group">
                       <label className="text-primary">_</label><br />
                       <input type="checkbox" id="discontinuedAWACS" defaultValue="Discontinued AWACS" />

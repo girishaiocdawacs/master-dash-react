@@ -10,6 +10,9 @@ import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import { useHistory, useLocation } from "react-router-dom";
 // import { useEffect, useState } from 'react';
 // import React from "react";
+import * as FcIcons from "react-icons/fc";
+import * as GiIcons from "react-icons/gi";
+
 function SideNav() {
 
   const location = useLocation();
@@ -70,11 +73,13 @@ function SideNav() {
                   title: 'Manual Mapping',
                   itemId: '/itemmapping',
                   subNav: Data.ManualMapping,
+                  elemBefore: () => <FcIcons.FcMindMap />,
                 },
                 {
                   title: 'Mapping QC',
                   itemId: '/mappingqc',
                   subNav: Data.MappingQC,
+                  elemBefore: () => <span className="text-green"><GiIcons.GiCheckMark /></span>,
                 },
                 {
                   title: 'Emailan Porting',
