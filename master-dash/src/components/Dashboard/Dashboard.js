@@ -19,6 +19,10 @@ import NewProductMapping from '../NewProductMapping/NewProductMapping';
 import MergingAndForceShifted from '../MergingAndForceShifted/MergingAndForceShifted';
 import MappingCorrection from '../MappingCorrection/MappingCorrection';
 import React from 'react';
+import MappingQCReport from '../MappingQCReport/MappingQCReport';
+import WrongMappingQC from '../WrongMappingQC/WrongMappingQC';
+import ListOfMappedItems from '../ListOfMappedItems/ListOfMappedItems';
+import MappingQC from '../MappingQC/MappingQC';
 
 
 function Dashboard() {
@@ -33,6 +37,7 @@ function Dashboard() {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route path="/zz" component={ZZ} />
+            {/* Manual Mapping */}
             <Route path="/stockandsales" component={StockAndSales} />
             <Route path="/itemmapping" component={ItemMapping} />
             <Route path="/addscreen" component={AddScreen} />
@@ -42,7 +47,11 @@ function Dashboard() {
             <Route path="/newproductmapping" component={NewProductMapping} />
             <Route path="/mergingandforceshifted" component={MergingAndForceShifted} />
             <Route path="/mappingcorrection" component={MappingCorrection} />
-            <Route path="/zz" component={ZZ} />
+            {/* Mapping QC */}
+            <Route path="/mappingqc" component={MappingQC} />
+            <Route path="/mappingqcreport" component={MappingQCReport} />
+            <Route path="/wrongmapingqc" component={WrongMappingQC} />
+            <Route path="/listofmappeditems" component={ListOfMappedItems} />
             <Route path="/*" component={NotFound} />
           </Switch>
         </div>

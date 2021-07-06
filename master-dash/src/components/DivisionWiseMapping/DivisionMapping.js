@@ -44,14 +44,14 @@ function DivisionMapping() {
                         </Table>
                     </div>
                 </div>
-                <div className="col-lg-4 p-1 m-0 border-left">
+                <div className="col-lg-4 m-0 border-left">
                     {/* <div className="col"> */}
                     <div className="row small p-0 m-0">
-                        <div className="form-group col">
+                        <div className="p-0 form-group col">
                             <label htmlFor="stockistmanufacturer">Stockist Manufacturer:</label><br />
                             <input type="text" className="form-control-sm" id="stockistmanufacturer" name="stockistmanufacturer" />&nbsp;
                         </div>
-                        <div className="form-group col">
+                        <div className="p-0 form-group col">
                             <label htmlFor="stockistshortcode">Stockist Shortcode:</label><br />
                             <input type="text" className="form-control-sm" id="stockistshortcode" name="stockistshortcode" />&nbsp;
                         </div>

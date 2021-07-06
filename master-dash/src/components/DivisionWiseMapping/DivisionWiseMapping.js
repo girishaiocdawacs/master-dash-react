@@ -15,9 +15,9 @@ import { connect } from 'react-redux';
 function DivisionWiseMapping(props) {
 
   const dtitle = 'Division Wise Mapping'
-const dbtitle = 'Division Wise Mapping'
+  const dbtitle = 'Division Wise Mapping'
 
-useEffect(() => {
+  useEffect(() => {
     props.setTitle(dtitle, dbtitle)
   }, [dtitle, dbtitle, props])
 
@@ -51,7 +51,7 @@ useEffect(() => {
                   <button className="btn btn-sm col-1 btn-danger" onClick={() => exitAll()}><BiIcon.BiExit /> &nbsp;Exit</button>
                 </div>
               </div>
-            </div> 
+            </div>
             <div className="card p-3">
               <Tabs
                 id="controlled-tab-example"
@@ -75,17 +75,17 @@ useEffect(() => {
 
 const titleStateToProp = (state) => {
   return {
-      title: state.title,
-      btitle: state.btitle
+    title: state.title,
+    btitle: state.btitle
   }
-  }
-  
-  const titleDispatch = (dispatch) => {
+}
+
+const titleDispatch = (dispatch) => {
   return {
-      setTitle: (dtitle, dbtitle) =>
+    setTitle: (dtitle, dbtitle) =>
       dispatch({ type: 'TITLE', title: dtitle, btitle: dbtitle }),
   }
-  }
-  
-  
+}
+
+
 export default connect(titleStateToProp, titleDispatch)(DivisionWiseMapping);
