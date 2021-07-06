@@ -51,7 +51,7 @@ useEffect(() => {
                   <button className="btn btn-sm col-1 btn-danger" onClick={() => exitAll()}><BiIcon.BiExit /> &nbsp;Exit</button>
                 </div>
               </div>
-            </div>
+            </div> 
             <div className="card p-3">
               <Tabs
                 id="controlled-tab-example"
