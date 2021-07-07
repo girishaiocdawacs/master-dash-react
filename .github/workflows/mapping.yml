@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose.exe -f awacs-cloud-standalone.yml convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: smartweb
+  name: smartweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: smartweb
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose.exe -f awacs-cloud-standalone.yml convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: smartweb
+    spec:
+      containers:
+      - image: gcr.io/awacs-dev/smart-pharmacy-web:latest
+        imagePullPolicy: ""
+        name: smartweb
+        ports:
+        - containerPort: 80
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose.exe -f awacs-cloud-standalone.yml convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: smartweb
+  name: smartweb
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    targetPort: 80
+  selector:
+    io.kompose.service: smartweb
+status:
+  loadBalancer: {}
