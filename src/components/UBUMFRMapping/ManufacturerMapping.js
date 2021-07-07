@@ -18,8 +18,8 @@ function ManufacturerMapping() {
                     <div className="col p-2">
                         <input type="text" className="form-control-sm" size="65" />
                     </div>
-                    <div className="col bg-primary mt-2">
-                        <h3 className="p-0 m-0 ml-2 text-white">Yellow</h3>
+                    <div className="col bg-yellow mt-2">
+                        <h3 className="p-0 m-0 ml-2 text-dark">Yellow</h3>
                     </div>
                     <div>
                         <Table bordered responsive size="sm">

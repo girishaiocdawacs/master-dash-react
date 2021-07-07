@@ -4,7 +4,6 @@ import '../../assets/vendor/nucleo/css/nucleo.css';
 import '../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css';
 import './SideNav.css';
 import * as Data from './SideNavData';
-// import { NavLink } from 'react-router-dom';
 import { Navigation } from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import { useHistory, useLocation } from "react-router-dom";
@@ -40,7 +39,7 @@ function SideNav() {
       <div className="scrollbar-inner">
         {/* <!-- Brand --> */}
         <div className="sidenav-header mt-2 align-items-center">
-          <img src="../../logo.gif" height="95%" width="80%" alt="..." />
+          <img src="../../logo.gif" height="100%" width="75%" alt="..." />
         </div>
         <div className="navbar-inner p-0 m-0">
           {/* <!-- Collapse --> */}
@@ -71,7 +70,7 @@ function SideNav() {
                 },
                 {
                   title: 'Manual Mapping',
-                  itemId: '/itemmapping',
+                  itemId: '/ubumfrmapping',
                   subNav: Data.ManualMapping,
                   elemBefore: () => <FcIcons.FcMindMap />,
                 },
