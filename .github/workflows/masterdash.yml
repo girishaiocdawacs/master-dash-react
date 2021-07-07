@@ -6,19 +6,23 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [15.x]
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Checkout
+      uses: actions/checkout@v1
+    - uses: actions/setup-node@v1 #this installs node and npm for us
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install Packages
-      run: npm install
-    - name: Build page
-      run: npm run build
+        node-version: '15.x'
+    - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-  
+    - name: Build
+      run: |
+        CI=true npm install
+        CI=false npm run build
+        echo "Buildsuccessfully"
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
