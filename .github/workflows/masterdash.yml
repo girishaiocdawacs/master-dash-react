@@ -1,4 +1,4 @@
-name: MasterDash Test
+name: MasterDash
 on:
   push:
     branches:
@@ -23,7 +23,7 @@ jobs:
         CI=true npm install
         CI=false npm run build
         ls -lrta
-        echo "Buildsuccessfully"
+        echo "Build successfully"
     - name: Deploy to gh-pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
