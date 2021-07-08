@@ -1,0 +1,9 @@
+code[class*="language-"] a[ref], pre[class*="language-"] a[ref] {
+	cursor: help;
+	text-decoration: none;
+}
+
+code[class*="language-"] a[ref]:hover, pre[class*="language-"] a[ref]:hover {
+	cursor: help;
+	text-decoration: underline;
+}
