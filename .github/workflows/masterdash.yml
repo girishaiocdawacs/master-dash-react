@@ -20,8 +20,8 @@ jobs:
           ${{ runner.os }}-node-  
     - name: Build
       run: |
-        CI=true npm install
-        CI=false npm run build
+        CI=true npm install --production
+        CI=false npm run build --production
         ls -lrta
         echo "Build successfully"
     - name: Deploy to gh-pages
